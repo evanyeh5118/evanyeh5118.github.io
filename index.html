@@ -1,36 +1,137 @@
-<!-- Projects -->
-<section id="projects" class="mt-10">
-  <div class="flex items-center justify-between mb-4">
-    <h2 class="text-xl font-semibold">Projects</h2>
-    <div class="hidden sm:flex gap-2">
-      <button id="projectsPrev"
-              class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-              aria-label="Scroll projects left">←</button>
-      <button id="projectsNext"
-              class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-              aria-label="Scroll projects right">→</button>
-    </div>
-  </div>
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Interactive Persona</title>
+    <meta name="description" content="Personal homepage and projects of Your Name." />
+    <link rel="icon" href="data:," />
 
-  <!-- The scroll container -->
-  <div id="projectsScroller"
-       class="overflow-x-auto -mx-4 px-4 pb-2"
-       role="region"
-       aria-label="Projects carousel">
-    <!-- The horizontal track we’ll populate -->
-    <div id="projectsTrack"
-         class="flex gap-4 snap-x snap-mandatory">
-      <!-- cards injected by script.js -->
-    </div>
-  </div>
+    <!-- Early theme set to avoid flash -->
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
 
-  <!-- Mobile arrows -->
-  <div class="mt-3 flex sm:hidden justify-end gap-2">
-    <button id="projectsPrevMobile"
-            class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-            aria-label="Scroll projects left">←</button>
-    <button id="projectsNextMobile"
-            class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-            aria-label="Scroll projects right">→</button>
-  </div>
-</section>
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            boxShadow: { soft: "0 10px 30px rgba(0,0,0,.10)" }
+          }
+        }
+      }
+    </script>
+
+    <meta property="og:title" content="Your Name" />
+    <meta property="og:description" content="Researcher • Builder • Problem Solver" />
+    <meta property="og:image" content="og.png" />
+    <meta name="theme-color" content="#0f172a" />
+  </head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 backdrop-blur bg-white/80 dark:bg-slate-900/80 border-b border-slate-200/60 dark:border-slate-700/60">
+      <div class="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 grid place-items-center font-bold">Y</div>
+          <span class="font-semibold">Your Name</span>
+        </a>
+        <nav class="flex items-center gap-5 text-sm">
+          <a href="#projects" class="hover:underline">Projects</a>
+          <a href="#about" class="hover:underline">About</a>
+          <a href="/blog/" class="hover:underline">Blog</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+          <button id="themeToggle" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-xs">Toggle theme</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="mx-auto max-w-5xl px-4">
+      <!-- Hero -->
+      <section class="mt-10 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-soft bg-white dark:bg-slate-900">
+        <h1 class="text-2xl font-semibold">Hello 👋</h1>
+        <p class="mt-2 text-slate-700 dark:text-slate-300">
+          I design learning systems at the intersection of control, RL, and networks. This site collects selected work, notes, and experiments.
+        </p>
+        <div class="mt-4 flex gap-3 flex-wrap">
+          <a class="px-4 py-2 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm" href="#projects">See projects</a>
+          <button class="px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 text-sm" id="copyEmail">Copy email</button>
+          <span id="copied" class="text-xs text-slate-500 self-center"></span>
+        </div>
+      </section>
+
+    <!-- Projects -->
+    <section id="projects" class="mt-10">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-semibold">Projects</h2>
+        <div class="hidden sm:flex gap-2">
+          <button id="projectsPrev"
+                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
+                  aria-label="Scroll projects left">←</button>
+          <button id="projectsNext"
+                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
+                  aria-label="Scroll projects right">→</button>
+        </div>
+      </div>
+
+      <!-- The scroll container -->
+      <div id="projectsScroller"
+          class="overflow-x-auto -mx-4 px-4 pb-2"
+          role="region"
+          aria-label="Projects carousel">
+        <!-- The horizontal track we’ll populate -->
+        <div id="projectsTrack"
+            class="flex gap-4 snap-x snap-mandatory">
+          <!-- cards injected by script.js -->
+        </div>
+      </div>
+
+      <!-- Mobile arrows -->
+      <div class="mt-3 flex sm:hidden justify-end gap-2">
+        <button id="projectsPrevMobile"
+                class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
+                aria-label="Scroll projects left">←</button>
+        <button id="projectsNextMobile"
+                class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
+                aria-label="Scroll projects right">→</button>
+      </div>
+    </section>
+
+      <!-- About -->
+      <section id="about" class="mt-10">
+        <h2 class="text-xl font-semibold mb-4">About</h2>
+        <ul id="timelineList" class="space-y-2 text-sm"></ul>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="mt-10 mb-16">
+        <h2 class="text-xl font-semibold mb-4">Contact</h2>
+        <ul class="text-sm space-y-1">
+          <li><a class="underline" href="mailto:you@example.com">you@example.com</a></li>
+          <li><a class="underline" href="https://github.com/YOURUSER" target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><a class="underline" href="https://www.linkedin.com/in/YOURUSER/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-700">
+      <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-slate-500">
+        © <span id="year"></span> Your Name • Built on GitHub Pages
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
