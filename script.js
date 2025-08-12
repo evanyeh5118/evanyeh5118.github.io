@@ -44,8 +44,6 @@ fetch("/data/projects.json", { cache: "no-store" })
   .then(items => {
     const track = document.getElementById("projectsTrack");
     const scroller = document.getElementById("projectsScroller");
-    //const isMobile = window.matchMedia("(max-width: 639px)").matches;
-    //const cardWidthClasses = isMobile ? "w-72" : ""; // no fixed width on desktop grid
     track.innerHTML = "";
 
     items.forEach(p => {
