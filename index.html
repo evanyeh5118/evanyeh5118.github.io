@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Interactive Persona</title>
+  <meta name="description" content="Personal homepage and projects of Your Name." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:," />
+  <meta property="og:title" content="Your Name" />
+  <meta property="og:description" content="Researcher • Builder • Problem Solver" />
+  <meta property="og:image" content="og.png" />
+  <meta name="theme-color" content="#0f172a" />
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <div class="avatar" aria-hidden="true">Y</div>
+      <div>
+        <h1>Your Name</h1>
+        <p class="tag">Researcher • Builder • Problem Solver</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Hello 👋</h2>
+      <p>
+        I design learning systems at the intersection of control, RL, and networks.
+        This site collects selected work, notes, and experiments.
+      </p>
+      <div class="actions">
+        <a class="btn" href="#projects">See projects</a>
+        <button class="btn ghost" id="copyEmail">Copy email</button>
+      </div>
+      <div id="copied" class="copied" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="projects">
+      <h3>Projects</h3>
+      <div class="grid">
+        <a class="card" href="#" target="_blank" rel="noreferrer">
+          <h4>Diffusion Policy for Scheduling</h4>
+          <p>Offline RL + diffusion for bursty traffic scheduling.</p>
+          <span class="chips">RL</span>
+          <span class="chips">Networks</span>
+        </a>
+        <a class="card" href="#" target="_blank" rel="noreferrer">
+          <h4>Haptic Teleop Toolkit</h4>
+          <p>Low-latency haptics experiments and DPDR.</p>
+          <span class="chips">Haptics</span>
+          <span class="chips">5G</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h3>About</h3>
+      <ul class="timeline">
+        <li><b>2025</b> — PhD year 2, co-design of control & comms</li>
+        <li><b>2024</b> — Secondment at Aarhus; trading research</li>
+        <li><b>2023</b> — Began PhD; optimal control focus</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h3>Contact</h3>
+      <ul class="links">
+        <li><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><a href="https://github.com/YOURUSER" target="_blank" rel="noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/YOURUSER/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    © <span id="year"></span> Your Name • Built on GitHub Pages
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
