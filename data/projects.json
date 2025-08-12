@@ -10,6 +10,12 @@
       "desc": "Low-latency haptics experiments and DPDR.",
       "tags": ["Haptics", "5G"],
       "link": "#"
+    },
+    {
+      "title": "Haptic Teleop Toolkit",
+      "desc": "Low-latency haptics experiments and DPDR.",
+      "tags": ["Haptics", "5G"],
+      "link": "#"
     }
   ]
   
