@@ -1,0 +1,15 @@
+[
+    {
+      "title": "Diffusion Policy for Scheduling",
+      "desc": "Offline RL + diffusion for bursty traffic scheduling.",
+      "tags": ["RL", "Networks", "Research"],
+      "link": "#"
+    },
+    {
+      "title": "Haptic Teleop Toolkit",
+      "desc": "Low-latency haptics experiments and DPDR.",
+      "tags": ["Haptics", "5G"],
+      "link": "#"
+    }
+  ]
+  
