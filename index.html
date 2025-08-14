@@ -33,11 +33,23 @@
       }
     </script>
 
+    <style>
+      /* Hide scrollbar cross-browser for a specific container */
+      .hide-scrollbar {
+        -ms-overflow-style: none;      /* IE/Edge */
+        scrollbar-width: none;         /* Firefox */
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;                 /* Chrome/Safari/Opera */
+      }
+    </style>
+
     <meta property="og:title" content="Your Name" />
     <meta property="og:description" content="Researcher • Builder • Problem Solver" />
     <meta property="og:image" content="og.png" />
     <meta name="theme-color" content="#0f172a" />
   </head>
+
   <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
     <!-- Header -->
     <header class="sticky top-0 z-40 backdrop-blur bg-white/80 dark:bg-slate-900/80 border-b border-slate-200/60 dark:border-slate-700/60">
@@ -47,10 +59,11 @@
           <span class="font-semibold">Your Name</span>
         </a>
         <nav class="flex items-center gap-5 text-sm">
+          <a href="#about" class="hover:underline">Timeline</a>
+          <a href="#publications" class="hover:underline">Publications</a>
           <a href="#projects" class="hover:underline">Projects</a>
-          <a href="#about" class="hover:underline">About</a>
-          <a href="/blog/" class="hover:underline">Blog</a>
           <a href="#contact" class="hover:underline">Contact</a>
+          <a href="/blog/" class="hover:underline">Blog</a>
           <button id="themeToggle" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-xs">Toggle theme</button>
         </nav>
       </div>
@@ -71,6 +84,45 @@
         </div>
       </section>
 
+     <!-- About -->
+     <section id="about" class="mt-10">
+      <h2 class="text-xl font-semibold mb-4">About</h2>
+      <ul id="timelineList" class="space-y-2 text-sm"></ul>
+    </section>
+
+  <!-- Publications -->
+  <section id="publications" class="mt-10">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-xl font-semibold">Publications</h2>
+      <div class="hidden sm:flex gap-2">
+        <button id="pubPrev"
+                class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
+                aria-label="Scroll publications left">←</button>
+        <button id="pubNext"
+                class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
+                aria-label="Scroll publications right">→</button>
+      </div>
+    </div>
+
+    <div id="pubStatus" class="text-sm text-slate-500 mb-2">Loading publications…</div>
+
+    <div id="pubScroller"
+        class="overflow-x-auto -mx-4 px-4 pb-2 hide-scrollbar overscroll-x-contain"
+        role="region" aria-label="Publications carousel">
+      <div id="pubTrack" class="flex gap-4 snap-x snap-mandatory"></div>
+    </div>
+
+    <div class="mt-3 flex sm:hidden justify-end gap-2">
+      <button id="pubPrevM"
+              class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
+              aria-label="Scroll publications left">←</button>
+      <button id="pubNextM"
+              class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
+              aria-label="Scroll publications right">→</button>
+    </div>
+  </section>
+
+
     <!-- Projects -->
     <section id="projects" class="mt-10">
       <div class="flex items-center justify-between mb-4">
@@ -87,8 +139,8 @@
 
       <!-- The scroll container -->
       <div id="projectsScroller"
-          class="overflow-x-auto -mx-4 px-4 pb-2"
-          role="region"
+          class="overflow-x-auto -mx-4 px-4 pb-2 hide-scrollbar overscroll-x-contain"
+          role="region" 
           aria-label="Projects carousel">
         <!-- The horizontal track we’ll populate -->
         <div id="projectsTrack"
@@ -108,11 +160,7 @@
       </div>
     </section>
 
-      <!-- About -->
-      <section id="about" class="mt-10">
-        <h2 class="text-xl font-semibold mb-4">About</h2>
-        <ul id="timelineList" class="space-y-2 text-sm"></ul>
-      </section>
+     
 
       <!-- Contact -->
       <section id="contact" class="mt-10 mb-16">

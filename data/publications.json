@@ -1,0 +1,10 @@
+[
+    {
+      "year": 2025,
+      "title": "Diffusion Policy for Intra-Slice Resource Scheduling in the Tactile Internet",
+      "authors": "Y. Yeh, G. Kokkinis, Q. Zhang, V. S. Varma, S. E. Elayoubi",
+      "venue": "Proc. ICC 2025 (submitted)",
+      "links": { "pdf": "#", "arxiv": "#", "code": "https://github.com/YOURUSER/your-repo" },
+      "tags": ["RL","Diffusion","Networks"]
+    }
+]
