@@ -1,6 +1,9 @@
 [
-    { "year": "2025", "text": "PhD year 2, co-design of control & comms" },
-    { "year": "2024", "text": "Secondment at Aarhus; trading research" },
-    { "year": "2023", "text": "Began PhD; optimal control focus" }
-  ]
-  
+  { "year": "2023 - Present", "text": "PhD Student in Telecommunications Engineering at CentraleSupélec, focusing on co-design of control and communications" },
+  { "year": "2021 - 2023", "text": "Audio Algorithm Engineer at Realtek Semiconductor Corp., developing Active Noise Cancellation (ANC) algorithms for integrated circuits" },
+  { "year": "2021", "text": "Research Intern at Institut FEMTO-ST, working on control engineering; successfully defended oral presentation" },
+  { "year": "2018 - 2019", "text": "Research Intern at Industrial Technology Research Institute, Taiwan" },
+  { "year": "2020 - 2021", "text": "Master's degree in Machine Learning, Communications, and Security (MICAS) at Institut Polytechnique de Paris" },
+  { "year": "2018 - 2020", "text": "Master's degree in Electrical and Control Engineering at National Chiao Tung University (NCTU), Taiwan" },
+  { "year": "2014 - 2018", "text": "Bachelor's degree in Electronic and Computer Engineering at National Chiao Tung University (NCTU), Taiwan; leadership roles in multiple student organizations" }
+]
