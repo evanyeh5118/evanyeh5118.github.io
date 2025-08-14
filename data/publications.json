@@ -1,10 +1,14 @@
 [
     {
-      "year": 2025,
-      "title": "Diffusion Policy for Intra-Slice Resource Scheduling in the Tactile Internet",
-      "authors": "Y. Yeh, G. Kokkinis, Q. Zhang, V. S. Varma, S. E. Elayoubi",
-      "venue": "Proc. ICC 2025 (submitted)",
-      "links": { "pdf": "#", "arxiv": "#", "code": "https://github.com/YOURUSER/your-repo" },
-      "tags": ["RL","Diffusion","Networks"]
+      "year": 2022,
+      "title": "Modeling and position control of the HASEL actuator via port-Hamiltonian approacht",
+      "authors": "Yu Yeh, Nelson Eduardo Cisneros Pinto, Yongxin Wu, Kanty Rabenorosoa, Yann Le Gorreci",
+      "venue": "IEEE Robotics and Automation Letters",
+      "links": { 
+        "pdf": "https://evanyeh5118.github.io/files/yu2022Modeling.pdf", 
+        "DOI: 10.1109/LRA.2022.3181365": "https://ieeexplore-ieee-org.ezproxy.universite-paris-saclay.fr/document/9793678", 
+        "code": "#" 
+      },
+      "tags": ["Haptics","Actuators"]
     }
 ]
