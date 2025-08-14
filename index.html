@@ -7,18 +7,7 @@
     <meta name="description" content="Personal homepage and projects of Your Name." />
     <link rel="icon" href="data:," />
 
-    <!-- Early theme set to avoid flash -->
-    <script>
-      (() => {
-        const saved = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (saved === "dark" || (!saved && prefersDark)) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      })();
-    </script>
+    <!-- Theme will be set by JavaScript modules -->
 
     <!-- Tailwind (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,9 +33,22 @@
       }
     </style>
 
-    <meta property="og:title" content="Your Name" />
-    <meta property="og:description" content="Researcher • Builder • Problem Solver" />
-    <meta property="og:image" content="og.png" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Your Name — Interactive Persona" />
+    <meta property="og:description" content="Personal homepage and projects of Your Name. Researcher • Builder • Problem Solver" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourusername.github.io/" />
+    <meta property="og:image" content="https://yourusername.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Your Name - Interactive Persona" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Your Name — Interactive Persona" />
+    <meta name="twitter:description" content="Personal homepage and projects of Your Name. Researcher • Builder • Problem Solver" />
+    <meta name="twitter:image" content="https://yourusername.github.io/og.png" />
+    
     <meta name="theme-color" content="#0f172a" />
   </head>
 
@@ -160,8 +162,7 @@
       </div>
     </section>
 
-     
-
+    
       <!-- Contact -->
       <section id="contact" class="mt-10 mb-16">
         <h2 class="text-xl font-semibold mb-4">Contact</h2>
@@ -180,6 +181,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
+
