@@ -37,28 +37,23 @@
   </head>
 
   <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 text-base">
-    <!-- Header -->
-    <header 
-        class="sticky top-0 z-40 backdrop-blur bg-white/80 dark:bg-slate-900/80 border-b border-slate-200/60 dark:border-slate-700/60" 
-        style="height: 100px;">
-      <div class="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between" style="height: 100%;">
-        <a href="../" class="flex items-center gap-3" style="height: 100%;">
-          <div 
-              class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 grid place-items-center font-bold text-lg" 
-              style="height: 40px; width: 40px;">Y</div>
-          <span class="font-semibold text-2xl" style="line-height: 40px;">葉語 (Yu Yeh) 🧋🇹🇼 </span>
-        </a>
-        <nav class="flex items-center gap-5 text-base" style="height: 100%;">
-          <a href="../#recent" class="hover:underline text-base" style="height: 40px; display: flex; align-items: center;">Recent</a>
-          <a href="../#publications" class="hover:underline text-base" style="height: 40px; display: flex; align-items: center;">Publications</a>
-          <a href="../#projects" class="hover:underline text-base" style="height: 40px; display: flex; align-items: center;">Projects</a>
-          <a href="../#cv" class="hover:underline text-base" style="height: 40px; display: flex; align-items: center;">CV</a>
-          <a href="../#contact" class="hover:underline text-base" style="height: 40px; display: flex; align-items: center;">Contact</a>
-          <a href="../blog/" class="hover:underline text-base" style="height: 40px; display: flex; align-items: center;">Blog</a>
-          <button id="themeToggle" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm" style="height: 36px;">Toggle theme</button>
-        </nav>
-      </div>
-    </header>
+    <div id="banner-slot" class="sticky top-0 z-40"></div>
+    <script>
+      fetch('../partials/banner.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('banner-slot').innerHTML = html;
+          // Ensure the loaded banner maintains sticky positioning
+          const banner = document.querySelector('#banner-slot header');
+          if (banner) {
+            banner.classList.add('sticky', 'top-0', 'z-40');
+          }
+          // Initialize theme toggle for the dynamically loaded banner
+          import('../js/theme-toggle.js').then(module => {
+            module.initThemeToggle();
+          });
+        });
+    </script>
 
     <!-- Main -->
     <main class="mx-auto max-w-4xl px-4">

@@ -1,45 +1,114 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blog — Your Name</title>
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Blog — Your Name" />
-  <meta property="og:description" content="Read my latest thoughts, research, and experiments." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourusername.github.io/blog/" />
-  <meta property="og:image" content="https://yourusername.github.io/og.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Your Name - Blog" />
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blog — Your Name" />
-  <meta name="twitter:description" content="Read my latest thoughts, research, and experiments." />
-  <meta name="twitter:image" content="https://yourusername.github.io/og.png" />
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-  <main class="mx-auto max-w-3xl px-4 py-10">
-    <a href="/" class="underline text-sm">&larr; Home</a>
-    <h1 class="text-2xl font-semibold mt-2 mb-6">Blog</h1>
-    <div id="posts" class="space-y-4"></div>
-  </main>
-  <script>
-    fetch("./posts.json").then(r=>r.json()).then(posts=>{
-      const wrap=document.getElementById("posts");
-      posts.forEach(p=>{
-        const a=document.createElement("a");
-        a.href = "./posts/" + p.slug + ".html";
-        a.className="block p-4 rounded-xl border border-slate-200 hover:bg-white shadow-sm";
-        a.innerHTML = "<div class='text-sm text-slate-500'>"+p.date+"</div><div class='font-semibold'>"+p.title+"</div><div class='text-sm text-slate-600 mt-1'>"+(p.excerpt||"")+"</div>";
-        wrap.appendChild(a);
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blog — Yu Yeh</title>
+    <meta name="description" content="Read my latest thoughts, research, and experiments." />
+    <link rel="icon" href="data:," />
+
+    <!-- Theme will be set by JavaScript modules -->
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            boxShadow: { soft: "0 10px 30px rgba(0,0,0,.10)" }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      /* Hide scrollbar cross-browser for a specific container */
+      .hide-scrollbar {
+        -ms-overflow-style: none;      /* IE/Edge */
+        scrollbar-width: none;         /* Firefox */
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;                 /* Chrome/Safari/Opera */
+      }
+    </style>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Blog — Yu Yeh" />
+    <meta property="og:description" content="Read my latest thoughts, research, and experiments." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://evanyeh5118.github.io/blog/" />
+    <meta property="og:image" content="https://evanyeh5118.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Yu Yeh - Blog" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog — Yu Yeh" />
+    <meta name="twitter:description" content="Read my latest thoughts, research, and experiments." />
+    <meta name="twitter:image" content="https://evanyeh5118.github.io/og.png" />
+    
+    <meta name="theme-color" content="#0f172a" />
+  </head>
+
+  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 text-base">
+    <div id="banner-slot" class="sticky top-0 z-40"></div>
+    <script>
+      fetch('../partials/banner.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('banner-slot').innerHTML = html;
+          // Ensure the loaded banner maintains sticky positioning
+          const banner = document.querySelector('#banner-slot header');
+          if (banner) {
+            banner.classList.add('sticky', 'top-0', 'z-40');
+          }
+          // Initialize theme toggle for the dynamically loaded banner
+          import('../js/theme-toggle.js').then(module => {
+            module.initThemeToggle();
+          });
+        });
+    </script>
+
+    <!-- Main -->
+    <main class="mx-auto max-w-4xl px-4">
+      <!-- Page Header -->
+      <section class="mt-10 mb-8">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">Blog</h1>
+          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Read my latest thoughts, research, and experiments.
+          </p>
+        </div>
+      </section>
+
+      <!-- Blog Posts -->
+      <section class="mb-16">
+        <div id="posts" class="space-y-4"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-700">
+      <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-slate-500">
+        © <span id="year"></span> Yu Yeh • Built on GitHub Pages
+      </div>
+    </footer>
+
+    <script>
+      fetch("./posts.json").then(r=>r.json()).then(posts=>{
+        const wrap=document.getElementById("posts");
+        posts.forEach(p=>{
+          const a=document.createElement("a");
+          a.href = "./posts/" + p.slug + ".html";
+          a.className="block p-4 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-900 shadow-soft transition-colors";
+          a.innerHTML = "<div class='text-sm text-slate-500 dark:text-slate-400'>"+p.date+"</div><div class='font-semibold text-slate-900 dark:text-slate-100'>"+p.title+"</div><div class='text-sm text-slate-600 dark:text-slate-300 mt-1'>"+(p.excerpt||"")+"</div>";
+          wrap.appendChild(a);
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+
+    <script type="module" src="../js/year.js"></script>
+  </body>
 </html>
