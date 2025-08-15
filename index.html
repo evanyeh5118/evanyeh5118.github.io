@@ -184,40 +184,23 @@
           View my full CV with detailed experience, publications, and skills.
         </p>
 
-        <!-- Toggle Button -->
-        <button id="cvToggleBtn"
-                class="mb-3 px-4 py-2 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm shadow-soft">
-          Expand CV
-        </button>
-
-        <!-- PDF Container -->
-        <div id="cvContainer" class="overflow-hidden transition-all duration-300 ease-in-out flex justify-center items-center" style="height: 70vh;">
-          <iframe src="cv.pdf#view=FitH&zoom=50"
-                  class="w-4/5 mx-auto block"
-                  style="height: 100%;"
-                  frameborder="0">
-            Your browser does not support PDFs. 
-            <a href="cv.pdf" class="underline text-blue-600">Download CV</a>.
-          </iframe>
+        <div class="flex gap-3 flex-wrap">
+          <!-- View CV Button -->
+          <a href="cv.pdf" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="px-4 py-2 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm shadow-soft hover:opacity-90 transition-opacity">
+            View CV
+          </a>
+          
+          <!-- Download CV Button -->
+          <a href="cv.pdf" 
+             download="Yu_Yeh_CV.pdf"
+             class="px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            Download CV
+          </a>
         </div>
       </section>
-
-      <script>
-        const toggleBtn = document.getElementById('cvToggleBtn');
-        const cvContainer = document.getElementById('cvContainer');
-        let expanded = false;
-
-        toggleBtn.addEventListener('click', () => {
-          expanded = !expanded;
-          if (expanded) {
-            cvContainer.style.height = '100vh'; // Expanded height
-            toggleBtn.textContent = 'Collapse CV';
-          } else {
-            cvContainer.style.height = '70vh'; // Collapsed height
-            toggleBtn.textContent = 'Expand CV';
-          }
-        });
-      </script>
 
       <!-- Contact -->
       <section id="contact" class="mt-10 mb-16">
