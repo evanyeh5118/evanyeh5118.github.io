@@ -51,8 +51,15 @@ function initEducationTimeline() {
               class: "font-mono text-sm text-slate-500 dark:text-slate-400 font-bold tracking-wide"
             }, t.year),
             el("div", { 
-              class: "text-lg font-bold text-slate-900 dark:text-slate-100 leading-tight text-right flex-1 ml-4"
-            }, t.title)
+              class: "text-right flex-1 ml-4"
+            },
+              el("div", { 
+                class: "text-lg font-bold text-slate-900 dark:text-slate-100 leading-tight"
+              }, t.title),
+              el("div", { 
+                class: "text-sm text-slate-600 dark:text-slate-400 mt-1"
+              }, `${t.position} • ${t.place}, ${t.city}, ${t.country}`)
+            )
           ),
           // Description (hidden by default, shown on hover)
           el("div", { 
@@ -131,8 +138,15 @@ function initWorkTimeline() {
               class: "font-mono text-sm text-slate-500 dark:text-slate-400 font-bold tracking-wide"
             }, t.year),
             el("div", { 
-              class: "text-lg font-bold text-slate-900 dark:text-slate-100 leading-tight text-right flex-1 ml-4"
-            }, t.title)
+              class: "text-right flex-1 ml-4"
+            },
+              el("div", { 
+                class: "text-lg font-bold text-slate-900 dark:text-slate-100 leading-tight"
+              }, t.title),
+              el("div", { 
+                class: "text-sm text-slate-600 dark:text-slate-400 mt-1"
+              }, `${t.position} • ${t.place}, ${t.city}, ${t.country}`)
+            )
           ),
           // Description (hidden by default, shown on hover)
           el("div", { 

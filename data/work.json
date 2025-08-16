@@ -2,16 +2,28 @@
   { 
     "year": "2021 - 2023", 
     "title": "Audio Algorithm Engineer",
-    "text": "At Realtek Semiconductor Corp., developing Active Noise Cancellation (ANC) algorithms for integrated circuits"
+    "position": "Audio Algorithm Engineer",
+    "place": "Realtek Semiconductor Corp.",
+    "city": "Hsinchu",
+    "country": "Taiwan",
+    "text": "Developing Active Noise Cancellation (ANC) algorithms working on audio chip."
   },
   { 
     "year": "2021", 
     "title": "Research Intern",
-    "text": "At Institut FEMTO-ST, working on control engineering; successfully defended oral presentation"
+    "position": "Research Intern",
+    "place": "Institut FEMTO-ST",
+    "city": "Besançon",
+    "country": "France",
+    "text": "Design a soft robotic architecture based on HASEL soft actuators and provide a reliable mathematical modeling. HASEL exhibit highly nonlinear behavior and flexibility on account of large deformation and electromechanical coupling."
   },
   { 
     "year": "2018 - 2019", 
     "title": "Research Intern",
-    "text": "At Industrial Technology Research Institute, Taiwan"
+    "position": "Research Intern",
+    "place": "Industrial Technology Research Institute",
+    "city": "Hsinchu",
+    "country": "Taiwan",
+    "text": "The main objective of this project is to collect environmental data using an Arduino embedded board, an Arduino camera module, and an IMU sensor module, and to construct a VIO system through ROS open-source projects"
   }
 ]

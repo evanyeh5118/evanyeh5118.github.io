@@ -1,22 +1,38 @@
 [
   { 
     "year": "2023 - Present", 
-    "title": "PhD Student in Telecommunications Engineering",
-    "text": "At CentraleSupélec, focusing on co-design of control and communications"
+    "title": "PhD Student",
+    "position": "L2S",
+    "place": "CentraleSupélec",
+    "city": "Paris",
+    "country": "France",
+    "text": "Focusing on co-design of control and communications"
   },
   { 
     "year": "2020 - 2021", 
-    "title": "Master's Degree in Machine Learning, Communications, and Security (MICAS)",
-    "text": "At Institut Polytechnique de Paris"
+    "title": "Master's Degree",
+    "position": "Machine Learning, Communications, and Security (MICAS)",
+    "place": "Institut Polytechnique de Paris",
+    "city": "Paris",
+    "country": "France",
+    "text": "Advanced studies in machine learning and communications"
   },
   { 
     "year": "2018 - 2020", 
-    "title": "Master's Degree in Electrical and Control Engineering",
-    "text": "At National Chiao Tung University (NCTU), Taiwan"
+    "title": "Master's Degree",
+    "position": "Electrical and Control Engineering",
+    "place": "National Chiao Tung University (NCTU)",
+    "city": "Hsinchu",
+    "country": "Taiwan",
+    "text": "Specialized in control systems, optimization, and intelligent systems, with applications to self-driving cars, vehicular vision systems, and cloud computing. Completed graduate-level coursework in Computer Control Systems, Adaptive Control Systems, Optimization Theory and Applications, Sensing and Intelligent Systems, Cloud Computing and Big Data Analytics, Deep Learning and Digital Signal Processing, and Embedded Operating Systems. Conducted academic dissertation research with an average grade of 90.89/100, achieving a coursework GPA equivalent of 91.78/100.\n\nEngaged in seminars and interdisciplinary projects, including cultural applications for the National Palace Museum and teaching technique practice. Developed strong technical foundations in optimization, artificial intelligence, and embedded systems, complemented by training in research ethics and academic writing in English."
   },
   { 
     "year": "2014 - 2018", 
-    "title": "Bachelor's Degree in Electronic and Computer Engineering",
-    "text": "At National Chiao Tung University (NCTU), Taiwan; leadership roles in multiple student organizations"
+    "title": "Bachelor's Degree",
+    "position": "Electronic and Computer Engineering",
+    "place": "National Chiao Tung University (NCTU)",
+    "city": "Hsinchu",
+    "country": "Taiwan",
+    "text": "Leadership roles in multiple student organizations"
   }
 ]
