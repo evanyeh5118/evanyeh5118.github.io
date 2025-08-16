@@ -1,5 +1,17 @@
 [
     {
+      "year": 2025,
+      "title": "AoI-based switching control for safe haptic teleoperation over a wireless network",
+      "authors": "Yu Yeh, Vineeth S Varma, Salah E Elayoubi",
+      "venue": "IEEE CDC 2024",
+      "links": { 
+        "pdf": "#", 
+        "DOI: 10.1109/CDC56724.2024.10885873": "https://ieeexplore-ieee-org.ezproxy.universite-paris-saclay.fr/abstract/document/10885873", 
+        "code": "#" 
+      },
+      "tags": ["Haptics Interface","Markov Jump Lienar System", "Safety control"]
+    },
+    {
       "year": 2022,
       "title": "Modeling and position control of the HASEL actuator via port-Hamiltonian approacht",
       "authors": "Yu Yeh, Nelson Eduardo Cisneros Pinto, Yongxin Wu, Kanty Rabenorosoa, Yann Le Gorreci",
@@ -9,6 +21,6 @@
         "DOI: 10.1109/LRA.2022.3181365": "https://ieeexplore-ieee-org.ezproxy.universite-paris-saclay.fr/document/9793678", 
         "code": "#" 
       },
-      "tags": ["Haptics","Actuators"]
+      "tags": ["HASEL","Soft Actuators", "Port-Hamiltonian"]
     }
 ]
