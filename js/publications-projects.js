@@ -3,7 +3,6 @@ import { initThemeToggle } from "./theme-toggle.js";
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeToggle();
   initPublications();
   initProjects();
 });

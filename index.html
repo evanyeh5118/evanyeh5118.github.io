@@ -4,8 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Your Name — Interactive Persona</title>
-    <meta name="description" content="Personal homepage and projects of Your Name." />
+    <meta name="description" content="Personal homepage and projects of Your Name. Researcher • Builder • Problem Solver" />
     <link rel="icon" href="data:," />
+
+    <!-- Prevent flash of unstyled content -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      })();
+    </script>
 
     <!-- Theme will be set by JavaScript modules -->
 
@@ -31,6 +39,35 @@
       .hide-scrollbar::-webkit-scrollbar {
         display: none;                 /* Chrome/Safari/Opera */
       }
+      
+      /* CSS-based theme fallback */
+      :root {
+        color-scheme: light dark;
+      }
+      
+      /* Prevent flash of unstyled content */
+      html.dark {
+        color-scheme: dark;
+      }
+      
+      /* Ensure theme toggle button is properly styled */
+      #themeToggle {
+        background: white;
+        color: #1e293b;
+        border: 1px solid #cbd5e1;
+        transition: all 0.2s ease;
+      }
+      
+      html.dark #themeToggle {
+        background: #1e293b;
+        color: white;
+        border-color: #475569;
+      }
+      
+      #themeToggle:hover {
+        opacity: 0.8;
+      }
+      
        /* Add scroll offset for fixed header */
       html {
         scroll-padding-top: 110px;
@@ -59,16 +96,32 @@
   <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 text-base">
     <div id="banner-slot" class="sticky top-0 z-40"></div>
     <script>
-      fetch('/partials/banner.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('banner-slot').innerHTML = html;
-          // Ensure the loaded banner maintains sticky positioning
-          const banner = document.querySelector('#banner-slot header');
-          if (banner) {
-            banner.classList.add('sticky', 'top-0', 'z-40');
-          }
-        });
+      function loadBanner() {
+        fetch('/partials/banner.html')
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById('banner-slot').innerHTML = html;
+            // Ensure the loaded banner maintains sticky positioning
+            const banner = document.querySelector('#banner-slot header');
+            if (banner) {
+              banner.classList.add('sticky', 'top-0', 'z-40');
+            }
+            // Initialize theme toggle for the dynamically loaded banner
+            import('./js/theme-toggle.js').then(module => {
+              // Small delay to ensure DOM is fully ready
+              setTimeout(() => {
+                module.initThemeToggle();
+              }, 100);
+            });
+          });
+      }
+
+      // Load banner immediately if DOM is ready, otherwise wait
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadBanner);
+      } else {
+        loadBanner();
+      }
     </script>
 
     <!-- Main -->
