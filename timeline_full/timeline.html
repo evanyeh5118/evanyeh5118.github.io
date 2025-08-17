@@ -104,10 +104,22 @@
             A categorized timeline of my education and work experience, from undergraduate studies to current research.
           </p>
         </div>
+        
+        <!-- Tab Navigation -->
+        <div class="flex justify-center mt-8">
+          <div class="bg-slate-200 dark:bg-slate-800 rounded-xl p-1">
+            <button id="educationTab" class="tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm">
+              Education
+            </button>
+            <button id="workTab" class="tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">
+              Work Experience
+            </button>
+          </div>
+        </div>
       </section>
 
       <!-- Education Timeline -->
-      <section class="mb-16">
+      <section id="educationSection" class="mb-16">
         <div class="text-center mb-8">
           <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">Education</h2>
           <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
@@ -118,7 +130,7 @@
       </section>
 
       <!-- Work Timeline -->
-      <section class="mb-16">
+      <section id="workSection" class="mb-16 hidden">
         <div class="text-center mb-8">
           <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">Work Experience</h2>
           <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">

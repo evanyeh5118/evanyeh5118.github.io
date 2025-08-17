@@ -8,6 +8,9 @@ export function initFullTimeline() {
   initEducationTimeline();
   initWorkTimeline();
   
+  // Initialize tab functionality
+  initTabs();
+  
   console.log("=== FULL TIMELINE INITIALIZATION END ===");
 }
 
@@ -183,6 +186,42 @@ function initWorkTimeline() {
       console.error("Error loading work timeline:", error);
       ul.innerHTML = `<div class="text-red-600 dark:text-red-400 p-6 bg-red-50 dark:bg-red-900/20 rounded-2xl">Error loading work timeline: ${error.message}</div>`;
     });
+}
+
+function initTabs() {
+  console.log("Initializing tabs...");
+  
+  const educationTab = document.getElementById("educationTab");
+  const workTab = document.getElementById("workTab");
+  const educationSection = document.getElementById("educationSection");
+  const workSection = document.getElementById("workSection");
+  
+  if (!educationTab || !workTab || !educationSection || !workSection) {
+    console.error("Tab elements not found!");
+    return;
+  }
+  
+  // Function to switch tabs
+  function switchTab(activeTab, activeSection, inactiveTab, inactiveSection) {
+    // Update tab styles
+    activeTab.className = "tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm";
+    inactiveTab.className = "tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100";
+    
+    // Show/hide sections
+    activeSection.classList.remove("hidden");
+    inactiveSection.classList.add("hidden");
+  }
+  
+  // Add click event listeners
+  educationTab.addEventListener("click", () => {
+    switchTab(educationTab, educationSection, workTab, workSection);
+  });
+  
+  workTab.addEventListener("click", () => {
+    switchTab(workTab, workSection, educationTab, educationSection);
+  });
+  
+  console.log("Tabs initialized successfully");
 }
 
 // Initialize when DOM is ready
