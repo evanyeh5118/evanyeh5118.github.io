@@ -7,6 +7,14 @@
     <meta name="description" content="Categorized timeline of Yu Yeh's education and work experience." />
     <link rel="icon" href="data:," />
 
+    <!-- Prevent flash of unstyled content -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      })();
+    </script>
+
     <!-- Theme will be set by JavaScript modules -->
 
     <!-- Tailwind (CDN) -->
@@ -31,6 +39,34 @@
       .hide-scrollbar::-webkit-scrollbar {
         display: none;                 /* Chrome/Safari/Opera */
       }
+      
+      /* CSS-based theme fallback */
+      :root {
+        color-scheme: light dark;
+      }
+      
+      /* Prevent flash of unstyled content */
+      html.dark {
+        color-scheme: dark;
+      }
+      
+      /* Ensure theme toggle button is properly styled */
+      #themeToggle {
+        background: white;
+        color: #1e293b;
+        border: 1px solid #cbd5e1;
+        transition: all 0.2s ease;
+      }
+      
+      html.dark #themeToggle {
+        background: #1e293b;
+        color: white;
+        border-color: #475569;
+      }
+      
+      #themeToggle:hover {
+        opacity: 0.8;
+      }
     </style>
 
     <meta name="theme-color" content="#0f172a" />
@@ -50,7 +86,10 @@
           }
           // Initialize theme toggle for the dynamically loaded banner
           import('../js/theme-toggle.js').then(module => {
-            module.initThemeToggle();
+            // Small delay to ensure DOM is fully ready
+            setTimeout(() => {
+              module.initThemeToggle();
+            }, 5);
           });
         });
     </script>
@@ -104,8 +143,6 @@
       </div>
     </footer>
 
-    <script type="module" src="../js/timeline-full.js"></script>
-    <script type="module" src="../js/year.js"></script>
-    <script type="module" src="../js/theme-toggle.js"></script>
+    <script type="module" src="./timeline-full.js"></script>
   </body>
 </html>

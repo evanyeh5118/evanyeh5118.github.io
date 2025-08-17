@@ -1,6 +1,5 @@
-import { el } from "./utils/dom.js";
-import { initThemeToggle } from "./theme-toggle.js";
-import { initYear } from "./year.js";
+import { el } from "../js/utils/dom.js";
+import { initYear } from "../js/year.js";
 
 export function initFullTimeline() {
   console.log("=== FULL TIMELINE INITIALIZATION START ===");
