@@ -4,6 +4,7 @@ import { initCopyEmail } from "./copy-email.js";
 import { initProjects } from "./projects.js";
 import { initTimeline } from "./timeline.js";
 import { initPublications } from "./publications.js";
+import { initRecent } from "./recent.js";
 
 // Run after DOM is ready
 window.addEventListener("DOMContentLoaded", () => {
@@ -12,4 +13,5 @@ window.addEventListener("DOMContentLoaded", () => {
   initProjects();
   initTimeline();
   initPublications();
+  initRecent();
 });
