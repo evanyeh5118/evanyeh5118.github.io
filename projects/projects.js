@@ -1,10 +1,8 @@
 import { el } from "../js/utils/dom.js";
-import { initThemeToggle } from "../js/theme-toggle.js";
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
   initProjects();
-  initThemeToggle();
 });
 
 // Projects section
