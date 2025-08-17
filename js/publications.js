@@ -52,8 +52,8 @@ export function initPublications() {
           "div",
           {
             class:
-              "snap-start shrink-0 w-[28rem] sm:w-[34rem] rounded-2xl p-5 shadow-soft " +
-              "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700",
+              "publication-block snap-start shrink-0 w-[28rem] sm:w-[34rem] rounded-2xl p-4 shadow-soft " +
+              "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] overflow-hidden",
           },
           el("div", { class: "text-sm text-slate-500" }, String(p.year ?? "")),
           el("div", { class: "font-semibold mt-1" }, p.title ?? ""),
@@ -63,9 +63,34 @@ export function initPublications() {
             p.authors ?? ""
           ),
           el("div", { class: "text-sm mt-1" }, p.venue ?? ""),
-          links.length ? el("div", { class: "mt-3 flex gap-2 flex-wrap" }, links) : null,
-          tags.length ? el("div", { class: "mt-2 flex gap-2 flex-wrap" }, tags) : null
+          // Expandable content (hidden by default, shown on hover)
+          el("div", { 
+            class: "publication-expandable max-h-0 opacity-0 transition-all duration-300 ease-in-out overflow-hidden"
+          },
+            links.length ? el("div", { class: "mt-3 flex gap-2 flex-wrap" }, links) : null,
+            tags.length ? el("div", { class: "mt-2 flex gap-2 flex-wrap" }, tags) : null
+          )
         );
+        
+        // Add hover event listeners for expansion effect
+        card.addEventListener('mouseenter', () => {
+          const expandable = card.querySelector('.publication-expandable');
+          if (expandable) {
+            expandable.style.maxHeight = '200px';
+            expandable.style.opacity = '1';
+            card.style.padding = '20px';
+          }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+          const expandable = card.querySelector('.publication-expandable');
+          if (expandable) {
+            expandable.style.maxHeight = '0px';
+            expandable.style.opacity = '0';
+            card.style.padding = '16px';
+          }
+        });
+        
         track.appendChild(card);
       });
 

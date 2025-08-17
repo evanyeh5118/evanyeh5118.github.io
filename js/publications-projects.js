@@ -81,8 +81,9 @@ function initPublications() {
             const pubCard = el(
               "div",
               {
-                class: "rounded-2xl p-6 shadow-soft bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow",
+                class: "publication-block bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 shadow-soft hover:shadow-lg transition-all duration-300 hover:scale-[1.02] overflow-hidden",
               },
+              // Basic info (always visible)
               el("div", { class: "font-semibold text-lg mb-2" }, pub.title ?? ""),
               el(
                 "div",
@@ -90,9 +91,33 @@ function initPublications() {
                 pub.authors ?? ""
               ),
               el("div", { class: "text-sm font-medium mb-3" }, pub.venue ?? ""),
-              links.length ? el("div", { class: "mb-3 flex gap-2 flex-wrap" }, links) : null,
-              tags.length ? el("div", { class: "flex gap-2 flex-wrap" }, tags) : null
+              // Expandable content (hidden by default, shown on hover)
+              el("div", { 
+                class: "publication-expandable max-h-0 opacity-0 transition-all duration-300 ease-in-out overflow-hidden"
+              },
+                links.length ? el("div", { class: "mb-3 flex gap-2 flex-wrap" }, links) : null,
+                tags.length ? el("div", { class: "flex gap-2 flex-wrap" }, tags) : null
+              )
             );
+            
+            // Add hover event listeners for expansion effect
+            pubCard.addEventListener('mouseenter', () => {
+              const expandable = pubCard.querySelector('.publication-expandable');
+              if (expandable) {
+                expandable.style.maxHeight = '200px';
+                expandable.style.opacity = '1';
+                pubCard.style.padding = '24px';
+              }
+            });
+            
+            pubCard.addEventListener('mouseleave', () => {
+              const expandable = pubCard.querySelector('.publication-expandable');
+              if (expandable) {
+                expandable.style.maxHeight = '0px';
+                expandable.style.opacity = '0';
+                pubCard.style.padding = '16px';
+              }
+            });
             
             container.appendChild(pubCard);
           });
