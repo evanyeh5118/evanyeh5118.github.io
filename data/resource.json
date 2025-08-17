@@ -1,9 +1,58 @@
 [
   {
     "title": "A Gentle Introduction to Offline Reinforcement Learning",
-    "description": "This short talk presents a non-technical introduction to offline reinforcement learning: algorithms for learning to make decisions from data.",
+    "description": "A non-technical introduction to offline reinforcement learning.",
     "url": "https://www.youtube.com/watch?v=tW-BNW1ApN8&t=2s",
     "category": "Speech",
-    "image": "https://www.youtube.com/favicon.ico"
+    "image": "https://img.youtube.com/vi/tW-BNW1ApN8/mqdefault.jpg"
+  },
+  {
+    "title": "Offline Reinforcement Learning",
+    "description": "This playlist contains tutorials on offline reinforcement learning.",
+    "url": "https://www.youtube.com/playlist?list=PLfBz0z-kA5RBj9p6C84uuthFxhCwb9eJ1",
+    "category": "Lectures",
+    "image": "https://img.youtube.com/vi/PLfBz0z-kA5RBj9p6C84uuthFxhCwb9eJ1/mqdefault.jpg"
+  },
+  {
+    "title": "陳伯寧老師 - 通訊高等機率 Advanced Probability in Communications",
+    "description": "Necessary background on advanced probability theories for communications.",
+    "url": "https://www.youtube.com/playlist?list=PLj6E8qlqmkFu8te1AGqVlrJsLASJsTg58",
+    "category": "Lectures",
+    "image": "https://www.youtube.com/playlist?list=PLj6E8qlqmkFu8te1AGqVlrJsLASJsTg58/mqdefault.jpg"
+  },
+  {
+    "title": "陳伯寧老師 - 消息理論 Information Theory",
+    "description": "A concise, yet mathematically rigorous, introduction to the main pillars of information theory.",
+    "url": "https://www.youtube.com/playlist?list=PLj6E8qlqmkFsWS54o6gNWeDGXeI7c3eUd",
+    "category": "Lectures",
+    "image": "https://www.youtube.com/playlist?list=PLj6E8qlqmkFsWS54o6gNWeDGXeI7c3eUd/mqdefault.jpg"
+  },
+  {
+    "title": "A Course on LMIs in Systems and Control",
+    "description": "A course on Linear Matrix Inequalities (LMI) in systems and control.",
+    "url": "https://www.youtube.com/playlist?list=PL5ebyVGQORm6n158o-I_liUZ7Q5Od43li",
+    "category": "Lectures",
+    "image": "https://www.youtube.com/playlist?list=PL5ebyVGQORm6n158o-I_liUZ7Q5Od43li/mqdefault.jpg"
+  },
+  {
+    "title": "RLSS 2023 - Safe Reinforcement Learning - Felix Berkenkamp",
+    "description": "A tutorial on safe reinforcement learning.",
+    "url": "https://www.youtube.com/watch?v=HhTBUHiZWPE&t=1458s",
+    "category": "Tutorials",
+    "image": "https://img.youtube.com/vi/HhTBUHiZWPE/mqdefault.jpg"
+  },
+  {
+    "title": "DeepMind x UCL | Reinforcement Learning Course 2018",
+    "description": "A series of lectures on reinforcement learning.",
+    "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZBKeNJ-JE_eyJHZ7XgBoAyb",
+    "category": "Lectures",
+    "image": "https://img.youtube.com/vi/ISk80iLhdfU/mqdefault.jpg"
+  },
+  {
+    "title": "ETH Zürich DLSC: Introduction to Deep Learning",
+    "description": "Introduction 1+2 are all you need for Deep Learning.",
+    "url": "https://www.youtube.com/watch?v=q8bAXSBRz3k&list=PLJkYEExhe7rYY5HjpIJbgo-tDZ3bIAqAm&index=2",
+    "category": "Lectures",
+    "image": "https://img.youtube.com/vi/q8bAXSBRz3k/mqdefault.jpg"
   }
 ]
