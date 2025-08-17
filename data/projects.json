@@ -1,9 +1,8 @@
 [
-    {
-      "title": "Traffic predictor in Tactile Internet",
-      "desc": "Context-aware traffic prediction for Tactile Internet",
-      "tags": ["Tactile Internet", "LSTM", "Traffic prediction"],
-      "link": "https://github.com/evanyeh5118/Traffic_model_prediction"
-    }
-  ]
-  
+  {
+    "title": "Traffic predictor in Tactile Internet",
+    "desc": "Context-aware traffic prediction for Tactile Internet",
+    "tags": ["Tactile Internet", "LSTM", "Traffic prediction"],
+    "link": "https://github.com/evanyeh5118/Traffic_model_prediction"
+  }
+]
