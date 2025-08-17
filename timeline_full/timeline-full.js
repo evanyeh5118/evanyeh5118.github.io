@@ -51,16 +51,16 @@ function initEducationTimeline() {
             class: "flex items-center justify-between mb-0"
           },
             el("div", { 
-              class: "font-mono text-sm text-slate-500 dark:text-slate-400 font-bold tracking-wide"
+              class: "font-mono text-lg text-slate-500 dark:text-slate-400 font-bold tracking-wide"
             }, t.year),
             el("div", { 
               class: "text-right flex-1 ml-4"
             },
               el("div", { 
-                class: "text-lg font-bold text-slate-900 dark:text-slate-100 leading-tight"
+                class: "text-xl font-bold text-slate-900 dark:text-slate-100 leading-tight"
               }, t.title),
               el("div", { 
-                class: "text-sm text-slate-600 dark:text-slate-400 mt-1"
+                class: "text-base text-slate-600 dark:text-slate-400 mt-1"
               }, `${t.position} • ${t.place}, ${t.city}, ${t.country}`)
             )
           ),
@@ -128,56 +128,46 @@ function initRecentTimeline() {
       // Clear container
       recentContainer.innerHTML = "";
       
-             // Create the scrolling box
-       const scrollBox = el(
-         "div",
-         {
-           class: "bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 p-4 shadow-soft h-64 overflow-y-auto"
-         }
-       );
-      
-             // Add events to the scroll box
+             // Add events directly to the container with vertical layout
        events.forEach((event, index) => {
          const eventItem = el(
            "div",
            {
-             class: "flex items-start gap-4 py-4 border-b border-slate-100 dark:border-slate-700 last:border-b-0"
+             class: "flex items-start gap-6 py-4 border-b border-slate-200 dark:border-slate-700 last:border-b-0"
            },
-           // Year and month column
-           el(
-             "div",
-             {
-               class: "flex-shrink-0 w-24 text-right"
-             },
-             el(
-               "div",
-               {
-                 class: "font-mono text-base text-slate-500 dark:text-slate-400 font-semibold"
-               },
-               event.year
-             ),
-             el(
-               "div",
-               {
-                 class: "font-mono text-sm text-slate-400 dark:text-slate-500"
-               },
-               event.month
-             )
-           ),
-           // Event text
-           el(
-             "div",
-             {
-               class: "flex-1 text-base text-slate-700 dark:text-slate-300 leading-relaxed"
-             },
-             event.event
-           )
+                       // Date column (year and month)
+            el(
+              "div",
+              {
+                class: "flex-shrink-0 w-24 text-right"
+              },
+              el(
+                "div",
+                {
+                  class: "font-mono text-lg text-slate-500 dark:text-slate-400 font-bold tracking-wide"
+                },
+                event.year
+              ),
+              el(
+                "div",
+                {
+                  class: "font-mono text-base text-slate-400 dark:text-slate-500"
+                },
+                event.month
+              )
+            ),
+            // Event text
+            el(
+              "div",
+              {
+                class: "flex-1 text-lg text-slate-700 dark:text-slate-300 leading-relaxed pt-1"
+              },
+              event.event
+            )
          );
         
-        scrollBox.appendChild(eventItem);
+        recentContainer.appendChild(eventItem);
       });
-      
-      recentContainer.appendChild(scrollBox);
       
       console.log("Recent events rendered successfully");
     })
@@ -225,16 +215,16 @@ function initWorkTimeline() {
             class: "flex items-center justify-between mb-0"
           },
             el("div", { 
-              class: "font-mono text-sm text-slate-500 dark:text-slate-400 font-bold tracking-wide"
+              class: "font-mono text-lg text-slate-500 dark:text-slate-400 font-bold tracking-wide"
             }, t.year),
             el("div", { 
               class: "text-right flex-1 ml-4"
             },
               el("div", { 
-                class: "text-lg font-bold text-slate-900 dark:text-slate-100 leading-tight"
+                class: "text-xl font-bold text-slate-900 dark:text-slate-100 leading-tight"
               }, t.title),
               el("div", { 
-                class: "text-sm text-slate-600 dark:text-slate-400 mt-1"
+                class: "text-base text-slate-600 dark:text-slate-400 mt-1"
               }, `${t.position} • ${t.place}, ${t.city}, ${t.country}`)
             )
           ),
@@ -307,6 +297,10 @@ function initTabs() {
   // Set initial state - Recent tab active
   switchTab(recentTab, recentSection, educationTab, educationSection, workTab, workSection);
   
+  recentTab.addEventListener("click", () => {
+    switchTab(recentTab, recentSection, educationTab, educationSection, workTab, workSection);
+  });
+
   // Add click event listeners
   educationTab.addEventListener("click", () => {
     switchTab(educationTab, educationSection, workTab, workSection, recentTab, recentSection);
@@ -316,9 +310,7 @@ function initTabs() {
     switchTab(workTab, workSection, educationTab, educationSection, recentTab, recentSection);
   });
   
-  recentTab.addEventListener("click", () => {
-    switchTab(recentTab, recentSection, educationTab, educationSection, workTab, workSection);
-  });
+
   
   console.log("Tabs initialized successfully");
 }

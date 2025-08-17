@@ -99,29 +99,38 @@
       <!-- Page Header -->
       <section class="mt-10 mb-8">
         <div class="text-center">
-          <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">My Journey</h1>
+          <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">Timelines</h1>
           <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            A categorized timeline of my education and work experience, from undergraduate studies to current research.
+            A categorized timeline of my recent activities, education and work experience.
           </p>
-        </div>
+        </div>  
         
         <!-- Tab Navigation -->
         <div class="flex justify-center mt-8">
           <div class="bg-slate-200 dark:bg-slate-800 rounded-xl p-1">
+            <button id="recentTab" class="tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm">
+              Recent
+            </button>
             <button id="educationTab" class="tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">
               Education
             </button>
-            <button id="workTab" class="tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">
+            <button id="workTab" class="tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 text-slate-600 dark:text-slate-700 hover:text-slate-900 dark:hover:text-slate-100">
               Work Experience
-            </button>
-            <button id="recentTab" class="tab-button px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm">
-              Recent
             </button>
           </div>
         </div>
       </section>
 
-
+      <!-- Recent Timeline -->
+      <section id="recentSection" class="mb-16">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">Recent Events</h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            Latest updates and recent activities in my academic and professional journey.
+          </p>
+        </div>
+        <div id="recentContainer" class="text-xl"></div>
+      </section>
 
       <!-- Education Timeline -->
       <section id="educationSection" class="mb-16 hidden">
@@ -145,16 +154,7 @@
         <div id="workTimelineList" class="space-y-6"></div>
       </section>
 
-      <!-- Recent Timeline -->
-      <section id="recentSection" class="mb-16">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">Recent Events</h2>
-          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Latest updates and recent activities in my academic and professional journey.
-          </p>
-        </div>
-        <div id="recentContainer" class="text-xl"></div>
-      </section>
+    
       
       <!-- Back to Home -->
       <section class="mb-16 text-center">
