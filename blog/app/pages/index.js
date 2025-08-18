@@ -34,7 +34,7 @@ export default function Home({ allPostsData }) {
             key={id}
             className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/40 backdrop-blur-sm p-6 transition-shadow duration-200 hover:shadow"
           >
-            <Link href={`/${id}/`}>
+            <Link href={`/posts/${id}/`}>
               <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2 hover:underline cursor-pointer">
                 {title}
               </h2>

@@ -4,7 +4,7 @@ const nextConfig = {
   trailingSlash: true,
   basePath: '/blog',
   assetPrefix: '/blog',
-  distDir: '../out',
+  distDir: '../posts',
   images: {
     unoptimized: true
   }

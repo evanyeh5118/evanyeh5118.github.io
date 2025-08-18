@@ -52,7 +52,7 @@ export default function Post({ postData }) {
       {/* Back to Blog */}
       <section className="mb-16 text-center">
         <a
-          href="/blog/"
+          href="/blog/posts/"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm shadow-soft hover:opacity-90 transition-opacity"
         >
           ← Back to Blog
