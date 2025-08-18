@@ -1,0 +1,87 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title class="jsx-bb88a000beb66cb6">Getting Started with Next.js<!-- --> - Blog</title><meta name="description" content="A comprehensive guide to building modern web applications with Next.js" class="jsx-bb88a000beb66cb6"/><meta name="next-head-count" content="4"/><link rel="preload" href="/blog/_next/static/css/405876dcac793ca5.css" as="style" crossorigin=""/><link rel="stylesheet" href="/blog/_next/static/css/405876dcac793ca5.css" crossorigin="" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" crossorigin="" nomodule="" src="/blog/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/blog/_next/static/chunks/webpack-a1eb7e34c7b7de7d.js" defer="" crossorigin=""></script><script src="/blog/_next/static/chunks/framework-6d18543c2c368b0c.js" defer="" crossorigin=""></script><script src="/blog/_next/static/chunks/main-ed3fbde9b5e57758.js" defer="" crossorigin=""></script><script src="/blog/_next/static/chunks/pages/_app-20a99e2f084b1c2f.js" defer="" crossorigin=""></script><script src="/blog/_next/static/chunks/303-f0c9dd287204954d.js" defer="" crossorigin=""></script><script src="/blog/_next/static/chunks/pages/%5Bslug%5D-450d0830bd899b26.js" defer="" crossorigin=""></script><script src="/blog/_next/static/fe6d-_OSUi2ILvJZf52tB/_buildManifest.js" defer="" crossorigin=""></script><script src="/blog/_next/static/fe6d-_OSUi2ILvJZf52tB/_ssgManifest.js" defer="" crossorigin=""></script><style id="__jsx-bb88a000beb66cb6">.container.jsx-bb88a000beb66cb6{min-height:100vh;padding:0 .5rem;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}main.jsx-bb88a000beb66cb6{padding:5rem 0;-webkit-box-flex:1;-webkit-flex:1;-moz-box-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;max-width:800px;width:100%}.post.jsx-bb88a000beb66cb6{width:100%}.post-header.jsx-bb88a000beb66cb6{margin-bottom:2rem;text-align:center}.back-link.jsx-bb88a000beb66cb6{display:inline-block;margin-bottom:1rem;color:#0070f3;text-decoration:none;font-size:.9rem}.back-link.jsx-bb88a000beb66cb6:hover{text-decoration:underline}.post-title.jsx-bb88a000beb66cb6{margin:0 0 1rem 0;line-height:1.15;font-size:3rem;text-align:center}.post-meta.jsx-bb88a000beb66cb6{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1rem;margin-bottom:1rem;font-size:.9rem;color:#666;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}.post-date.jsx-bb88a000beb66cb6{font-style:italic}.post-tags.jsx-bb88a000beb66cb6{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;gap:.5rem}.tag.jsx-bb88a000beb66cb6{background:#f0f0f0;padding:.2rem .5rem;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px;font-size:.8rem}.post-content.jsx-bb88a000beb66cb6{line-height:1.8;color:#333}.post-content.jsx-bb88a000beb66cb6 h1,.post-content.jsx-bb88a000beb66cb6 h2,.post-content.jsx-bb88a000beb66cb6 h3,.post-content.jsx-bb88a000beb66cb6 h4,.post-content.jsx-bb88a000beb66cb6 h5,.post-content.jsx-bb88a000beb66cb6 h6{margin-top:2rem;margin-bottom:1rem;line-height:1.3}.post-content.jsx-bb88a000beb66cb6 h1{font-size:2rem}.post-content.jsx-bb88a000beb66cb6 h2{font-size:1.5rem}.post-content.jsx-bb88a000beb66cb6 h3{font-size:1.25rem}.post-content.jsx-bb88a000beb66cb6 p{margin-bottom:1rem}.post-content.jsx-bb88a000beb66cb6 ul,.post-content.jsx-bb88a000beb66cb6 ol{margin-bottom:1rem;padding-left:2rem}.post-content.jsx-bb88a000beb66cb6 li{margin-bottom:.5rem}.post-content.jsx-bb88a000beb66cb6 blockquote{border-left:4px solid#0070f3;padding-left:1rem;margin:1rem 0;font-style:italic;color:#666}.post-content.jsx-bb88a000beb66cb6 code{background:#f0f0f0;padding:.2rem .4rem;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-family:monospace}.post-content.jsx-bb88a000beb66cb6 pre{background:#f0f0f0;padding:1rem;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;overflow-x:auto;margin:1rem 0}.post-content.jsx-bb88a000beb66cb6 pre code{background:none;padding:0}.post-content.jsx-bb88a000beb66cb6 a{color:#0070f3;text-decoration:none}.post-content.jsx-bb88a000beb66cb6 a:hover{text-decoration:underline}</style></head><body><div id="__next"><div class="jsx-bb88a000beb66cb6 container"><main class="jsx-bb88a000beb66cb6"><article class="jsx-bb88a000beb66cb6 post"><header class="jsx-bb88a000beb66cb6 post-header"><a class="back-link" href="/blog/">← Back to Blog</a><h1 class="jsx-bb88a000beb66cb6 post-title">Getting Started with Next.js</h1><div class="jsx-bb88a000beb66cb6 post-meta"><time class="jsx-bb88a000beb66cb6 post-date">January 20, 2024</time><div class="jsx-bb88a000beb66cb6 post-tags"><span class="jsx-bb88a000beb66cb6 tag">nextjs</span><span class="jsx-bb88a000beb66cb6 tag">react</span><span class="jsx-bb88a000beb66cb6 tag">web-development</span><span class="jsx-bb88a000beb66cb6 tag">tutorial</span></div></div></header><div class="jsx-bb88a000beb66cb6 post-content"><h1>Getting Started with Next.js</h1>
+<p>Next.js is a powerful React framework that makes building production-ready web applications simple and efficient.</p>
+<h2>Why Next.js?</h2>
+<p>Next.js provides several key benefits:</p>
+<ul>
+<li><strong>Server-Side Rendering (SSR)</strong>: Better SEO and performance</li>
+<li><strong>Static Site Generation (SSG)</strong>: Pre-built pages for maximum speed</li>
+<li><strong>File-based Routing</strong>: Simple and intuitive routing system</li>
+<li><strong>API Routes</strong>: Built-in API endpoints</li>
+<li><strong>TypeScript Support</strong>: First-class TypeScript integration</li>
+</ul>
+<h2>Key Features</h2>
+<h3>1. File-based Routing</h3>
+<p>Create routes by simply adding files to the <code>pages</code> directory:</p>
+<pre><code>pages/
+  index.js          # → /
+  about.js          # → /about
+  posts/
+    [id].js         # → /posts/1, /posts/2, etc.
+</code></pre>
+<h3>2. Static Generation</h3>
+<p>Generate static pages at build time:</p>
+<pre><code class="language-javascript">export async function getStaticProps() {
+  const data = await fetchData()
+  return {
+    props: { data },
+    revalidate: 60 // Revalidate every 60 seconds
+  }
+}
+</code></pre>
+<h3>3. Server-Side Rendering</h3>
+<p>Render pages on each request:</p>
+<pre><code class="language-javascript">export async function getServerSideProps(context) {
+  const data = await fetchData(context.params.id)
+  return {
+    props: { data }
+  }
+}
+</code></pre>
+<h2>Getting Started</h2>
+<ol>
+<li>
+<p><strong>Create a new project:</strong></p>
+<pre><code class="language-bash">npx create-next-app@latest my-app
+cd my-app
+</code></pre>
+</li>
+<li>
+<p><strong>Run the development server:</strong></p>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+</li>
+<li>
+<p><strong>Open your browser:</strong>
+Navigate to <code>http://localhost:3000</code></p>
+</li>
+</ol>
+<h2>Project Structure</h2>
+<p>A typical Next.js project looks like this:</p>
+<pre><code>my-app/
+├── components/     # Reusable React components
+├── pages/         # Application routes
+├── public/        # Static assets
+├── styles/        # CSS files
+├── lib/           # Utility functions
+└── package.json   # Dependencies and scripts
+</code></pre>
+<h2>Best Practices</h2>
+<ul>
+<li>Use the <code>pages</code> directory for routing</li>
+<li>Implement proper SEO with <code>next/head</code></li>
+<li>Optimize images with <code>next/image</code></li>
+<li>Use CSS modules or styled-jsx for styling</li>
+<li>Implement proper error boundaries</li>
+</ul>
+<h2>Deployment</h2>
+<p>Next.js applications can be deployed to various platforms:</p>
+<ul>
+<li><strong>Vercel</strong>: Zero-config deployment</li>
+<li><strong>Netlify</strong>: Static site hosting</li>
+<li><strong>AWS</strong>: Serverless deployment</li>
+<li><strong>Docker</strong>: Containerized deployment</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Next.js is an excellent choice for building modern web applications. Its combination of simplicity, performance, and developer experience makes it a top choice for both beginners and experienced developers.</p>
+<p>Start building with Next.js today and experience the future of React development!</p>
+</div></article></main></div></div><script id="__NEXT_DATA__" type="application/json" crossorigin="">{"props":{"pageProps":{"postData":{"slug":"getting-started-with-nextjs","contentHtml":"\u003ch1\u003eGetting Started with Next.js\u003c/h1\u003e\n\u003cp\u003eNext.js is a powerful React framework that makes building production-ready web applications simple and efficient.\u003c/p\u003e\n\u003ch2\u003eWhy Next.js?\u003c/h2\u003e\n\u003cp\u003eNext.js provides several key benefits:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eServer-Side Rendering (SSR)\u003c/strong\u003e: Better SEO and performance\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eStatic Site Generation (SSG)\u003c/strong\u003e: Pre-built pages for maximum speed\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFile-based Routing\u003c/strong\u003e: Simple and intuitive routing system\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eAPI Routes\u003c/strong\u003e: Built-in API endpoints\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eTypeScript Support\u003c/strong\u003e: First-class TypeScript integration\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eKey Features\u003c/h2\u003e\n\u003ch3\u003e1. File-based Routing\u003c/h3\u003e\n\u003cp\u003eCreate routes by simply adding files to the \u003ccode\u003epages\u003c/code\u003e directory:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003epages/\r\n  index.js          # → /\r\n  about.js          # → /about\r\n  posts/\r\n    [id].js         # → /posts/1, /posts/2, etc.\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e2. Static Generation\u003c/h3\u003e\n\u003cp\u003eGenerate static pages at build time:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eexport async function getStaticProps() {\r\n  const data = await fetchData()\r\n  return {\r\n    props: { data },\r\n    revalidate: 60 // Revalidate every 60 seconds\r\n  }\r\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e3. Server-Side Rendering\u003c/h3\u003e\n\u003cp\u003eRender pages on each request:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-javascript\"\u003eexport async function getServerSideProps(context) {\r\n  const data = await fetchData(context.params.id)\r\n  return {\r\n    props: { data }\r\n  }\r\n}\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eGetting Started\u003c/h2\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eCreate a new project:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003enpx create-next-app@latest my-app\r\ncd my-app\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eRun the development server:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003enpm run dev\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eOpen your browser:\u003c/strong\u003e\r\nNavigate to \u003ccode\u003ehttp://localhost:3000\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch2\u003eProject Structure\u003c/h2\u003e\n\u003cp\u003eA typical Next.js project looks like this:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003emy-app/\r\n├── components/     # Reusable React components\r\n├── pages/         # Application routes\r\n├── public/        # Static assets\r\n├── styles/        # CSS files\r\n├── lib/           # Utility functions\r\n└── package.json   # Dependencies and scripts\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch2\u003eBest Practices\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003eUse the \u003ccode\u003epages\u003c/code\u003e directory for routing\u003c/li\u003e\n\u003cli\u003eImplement proper SEO with \u003ccode\u003enext/head\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eOptimize images with \u003ccode\u003enext/image\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003eUse CSS modules or styled-jsx for styling\u003c/li\u003e\n\u003cli\u003eImplement proper error boundaries\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eDeployment\u003c/h2\u003e\n\u003cp\u003eNext.js applications can be deployed to various platforms:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eVercel\u003c/strong\u003e: Zero-config deployment\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eNetlify\u003c/strong\u003e: Static site hosting\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eAWS\u003c/strong\u003e: Serverless deployment\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eDocker\u003c/strong\u003e: Containerized deployment\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eConclusion\u003c/h2\u003e\n\u003cp\u003eNext.js is an excellent choice for building modern web applications. Its combination of simplicity, performance, and developer experience makes it a top choice for both beginners and experienced developers.\u003c/p\u003e\n\u003cp\u003eStart building with Next.js today and experience the future of React development!\u003c/p\u003e\n","title":"Getting Started with Next.js","date":"2024-01-20","description":"A comprehensive guide to building modern web applications with Next.js","tags":["nextjs","react","web-development","tutorial"]}},"__N_SSG":true},"page":"/[slug]","query":{"slug":"getting-started-with-nextjs"},"buildId":"fe6d-_OSUi2ILvJZf52tB","assetPrefix":"/blog","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
