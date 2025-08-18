@@ -4,7 +4,7 @@ import { getAllPostIds, getPostData } from '../lib/posts'
 
 export default function Post({ postData }) {
   return (
-    <div className="max-w-4xl mx-auto px-4">
+    <div className="mx-auto max-w-5xl px-4">
       <Head>
         <title>{postData.title} - Yu Yeh</title>
         <meta name="description" content={postData.description} />
