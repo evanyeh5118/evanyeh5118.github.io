@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }) {
             <a href="/publications/publications.html" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Publications</a>
             <a href="/projects/projects.html" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Projects</a>
             <a href="/share/share.html" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Resources</a>
-            <a href="/blog/posts/" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Blog</a>
+            <a href="posts/" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Blog</a>
             <button id="themeToggle" className="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm" style={{ height: '36px' }}>
               Toggle theme
             </button>
