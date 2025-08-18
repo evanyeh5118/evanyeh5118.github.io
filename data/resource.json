@@ -54,5 +54,12 @@
     "url": "https://www.youtube.com/watch?v=q8bAXSBRz3k&list=PLJkYEExhe7rYY5HjpIJbgo-tDZ3bIAqAm&index=2",
     "category": "Lectures",
     "image": "https://img.youtube.com/vi/q8bAXSBRz3k/mqdefault.jpg"
+  },
+  {
+    "title": "Djalil Chafai's Blog",
+    "description": "A blogs full of useful mathmatical discussions.",
+    "url": "https://djalil.chafai.net/blog/",
+    "category": "Books",
+    "image": "https://djalil.chafai.net/blog/"
   }
 ]
