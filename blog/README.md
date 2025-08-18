@@ -1,28 +1,46 @@
 # Personal Blog
 
-This is a Next.js blog that integrates with your main personal website repository.
+This is a personal blog built with Next.js that's now consistent with the main website's styling and includes the same banner component.
+
+## Features
+
+- ✅ **Consistent Styling**: Matches the main website's design and color scheme
+- ✅ **Banner Integration**: Uses the same header/navigation as the main website
+- ✅ **Theme Toggle**: Dark/light mode support with the same theme toggle functionality
+- ✅ **Back to Home Button**: Easy navigation back to the main website
+- ✅ **Responsive Design**: Mobile-friendly layout
+- ✅ **Markdown Support**: Write blog posts in Markdown format
 
 ## Structure
 
 ```
-/blog/
-  app/                    # Next.js source code
-    package.json         # Dependencies and scripts
-    next.config.js      # Next.js configuration
-    lib/posts.js        # Blog post utilities
-    posts/*.md          # Markdown blog posts
-    pages/              # Next.js pages
-    styles/             # CSS styles
-  index.html            # Blog listing page
-  <slug>/               # Individual post directories
-    index.html          # Post pages
-  _next/                # Next.js assets
-  README.md             # This file
+blog/
+├── app/                    # Next.js application
+│   ├── pages/             # React pages
+│   │   ├── _app.js        # Main app wrapper with banner
+│   │   ├── index.js       # Blog listing page
+│   │   └── [slug].js      # Individual blog post page
+│   ├── posts/             # Markdown blog posts
+│   ├── styles/            # CSS styles
+│   ├── lib/               # Utility functions
+│   ├── next.config.js     # Next.js configuration
+│   ├── package.json       # Dependencies
+│   ├── tailwind.config.js # Tailwind CSS configuration
+│   └── postcss.config.js  # PostCSS configuration
+├── index.html             # Built blog listing page
+├── getting-started-with-nextjs/ # Built blog post
+├── hello-world/           # Built blog post
+└── README.md              # This file
 ```
 
 ## Getting Started
 
-### Development
+### Prerequisites
+
+- Node.js 16+ 
+- npm or yarn
+
+### Installation
 
 1. Navigate to the blog directory:
    ```bash
@@ -34,73 +52,76 @@ This is a Next.js blog that integrates with your main personal website repositor
    npm install
    ```
 
-3. Run the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
 
-   The blog will be available at `http://localhost:3001/blog`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Building for Production
 
-1. Build the static site:
+1. Build the blog:
    ```bash
    npm run build
    ```
 
-   This will:
-   - Build the Next.js app
-   - Export static files to `/blog/out/`
-   - Copy files to `/blog/` for GitHub Pages
+2. The built files will be automatically copied to the blog root directory.
 
-2. The static files will be ready for GitHub Pages
+## Adding New Blog Posts
 
-## Adding New Posts
-
-1. Create a new `.md` file in `/blog/app/posts/`
-2. Add YAML frontmatter:
-   ```yaml
+1. Create a new Markdown file in `app/posts/` with the following frontmatter:
+   ```markdown
    ---
    title: "Your Post Title"
-   date: "YYYY-MM-DD"
-   description: "Brief description of the post"
-   tags: ["tag1", "tag2"]
+   date: "2024-01-01"
+   description: "Brief description of your post"
+   tags: ["tag1", "tag2", "tag3"]
    ---
+
+   Your post content here...
    ```
-3. Write your content in Markdown
-4. Build the site to see your new post
 
-## Configuration
+2. The post will automatically appear in the blog listing.
 
-- **Base Path**: `/blog` (configured in `next.config.js`)
-- **Static Export**: Enabled for GitHub Pages compatibility
-- **Trailing Slash**: Enabled for clean URLs
-- **Output Directory**: `../out` (one level up from app)
+## Customization
 
-## GitHub Pages
+### Styling
 
-The blog is configured to work with GitHub Pages serving from the repository root. After building, the static files in `/blog/` will be accessible at:
+- Edit `app/styles/globals.css` to modify the blog's appearance
+- The blog uses a consistent color scheme with the main website
+- Dark/light mode is automatically supported
 
-- Blog listing: `yourdomain.com/blog/`
-- Individual posts: `yourdomain.com/blog/<slug>/`
+### Banner
+
+- The banner is integrated in `app/pages/_app.js`
+- It includes the same navigation and theme toggle as the main website
+- The banner is fixed at the top for easy navigation
+
+### Navigation
+
+- Back to Home button: Returns to the main website
+- Back to Blog button: Returns to the blog listing (on individual posts)
+
+## Deployment
+
+The blog is configured for static export and can be deployed to:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting service
 
 ## Dependencies
 
 - **Next.js**: React framework
 - **React**: UI library
-- **Gray-matter**: YAML frontmatter parsing
-- **Remark**: Markdown processing
-- **Date-fns**: Date formatting
+- **Tailwind CSS**: Utility-first CSS framework
+- **@tailwindcss/typography**: Typography plugin for better content styling
 
-## Scripts
+## Notes
 
-- `npm run dev`: Development server
-- `npm run build`: Build and export static site
-- `npm run start`: Production server (for testing)
-- `npm run lint`: Code linting
-
-## Build Process
-
-1. `npm run build` generates static files in `/blog/out/`
-2. Files are automatically copied to `/blog/` for GitHub Pages
-3. The `out/` directory is cleaned up after copying
+- The blog uses the same theme system as the main website
+- All styling is consistent with the main website's design language
+- The banner provides seamless navigation between the blog and main website
+- Posts are automatically formatted with proper typography and spacing
