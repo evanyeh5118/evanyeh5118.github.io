@@ -4,7 +4,6 @@ date: "2025-08-19"
 description: "Rome is not built in a day, nor the website."
 tags: ["personal"]
 ---
-
 # Building My Personal Website & Blog
 
 Hello and welcome! 👋  
