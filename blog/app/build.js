@@ -4,7 +4,7 @@ const path = require('path');
 // Copy the built files to the blog root directory
 // Next.js config outputs to '../posts' relative to the app directory
 const sourceDir = path.join(__dirname, '..', 'posts');
-const targetDir = path.join(__dirname, '..', 'posts');
+const targetDir = path.join(__dirname, '..');
 
 if (fs.existsSync(sourceDir)) {
   // Copy all files from posts directory to blog root
