@@ -8,7 +8,7 @@ export default function Home({ allPostsData }) {
 
   useEffect(() => {
     // Simulate loading state for smoother transitions
-    const timer = setTimeout(() => setIsLoading(false), 10)
+    const timer = setTimeout(() => setIsLoading(false), 5)
     return () => clearTimeout(timer)
   }, [])
 

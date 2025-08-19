@@ -8,7 +8,7 @@ export default function Post({ postData }) {
 
   useEffect(() => {
     // Simulate loading state for smoother transitions
-    const timer = setTimeout(() => setIsLoading(false), 100)
+    const timer = setTimeout(() => setIsLoading(false), 5)
     return () => clearTimeout(timer)
   }, [])
 
