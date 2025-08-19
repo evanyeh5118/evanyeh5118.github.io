@@ -5,7 +5,7 @@ description: "Rome is not built in a day, nor the website."
 tags: ["personal"]
 ---
 
-## Building My Personal Website & Blog
+# Building My Personal Website & Blog
 
 Hello and welcome! 👋  
 
