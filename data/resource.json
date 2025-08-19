@@ -1,5 +1,12 @@
 [
    {
+    "title": "Reinforcement Learning: An Introduction",
+    "description": "Book for RL",
+    "url": "http://incompleteideas.net/book/the-book-2nd.html",
+    "category": "Books",
+    "image": "http://incompleteideas.net/smallbookcover.gif"
+  },
+   {
     "title": "Policy Gradient Methods",
     "description": "A slide for explaining policy gradient method and Actor-critic algorithm in RL",
     "url": "http://faculty.bicmr.pku.edu.cn/~wenzw/bigdata/lect-policy.pdf",
