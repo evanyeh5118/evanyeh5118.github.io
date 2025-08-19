@@ -1,8 +1,54 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { getSortedPostsData } from '../lib/posts'
 
 export default function Home({ allPostsData }) {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate loading state for smoother transitions
+    const timer = setTimeout(() => setIsLoading(false), 10)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading) {
+    return (
+      <div className="mx-auto max-w-4xl px-4 py-8">
+        <div className="animate-pulse">
+          {/* Page Header skeleton */}
+          <section className="mt-10 mb-8">
+            <div className="text-center">
+              <div className="w-32 h-12 bg-slate-200 dark:bg-slate-700 rounded mx-auto mb-4"></div>
+              <div className="w-96 h-6 bg-slate-200 dark:bg-slate-700 rounded mx-auto"></div>
+            </div>
+          </section>
+
+          {/* Blog Posts Section skeleton */}
+          <section className="mb-16">
+            <div className="flex items-center justify-between mb-6">
+              <div className="w-24 h-8 bg-slate-200 dark:bg-slate-700 rounded"></div>
+              <div className="w-20 h-6 bg-slate-200 dark:bg-slate-700 rounded"></div>
+            </div>
+
+            <div className="space-y-6">
+              {[...Array(3)].map((_, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/40 backdrop-blur-sm p-6"
+                >
+                  <div className="w-3/4 h-8 bg-slate-200 dark:bg-slate-700 rounded mb-3"></div>
+                  <div className="w-1/2 h-4 bg-slate-200 dark:bg-slate-700 rounded mb-3"></div>
+                  <div className="w-full h-4 bg-slate-200 dark:bg-slate-700 rounded"></div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">
       <Head>

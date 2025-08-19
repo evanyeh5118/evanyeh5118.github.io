@@ -1,3 +1,53 @@
+/* Critical CSS to prevent theme flash */
+:root {
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Prevent flash of unstyled content */
+html {
+  background-color: rgb(248 250 252); /* slate-50 */
+  color: rgb(15 23 42); /* slate-900 */
+}
+
+html.dark {
+  background-color: rgb(2 6 23); /* slate-950 */
+  color: rgb(248 250 252); /* slate-50 */
+}
+
+/* Ensure body also has the background color */
+body {
+  background-color: rgb(248 250 252); /* slate-50 */
+  color: rgb(15 23 42); /* slate-900 */
+  margin: 0;
+  padding: 0;
+}
+
+html.dark body {
+  background-color: rgb(2 6 23); /* slate-950 */
+  color: rgb(248 250 252); /* slate-50 */
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Prevent layout shift during loading */
+#__next {
+  min-height: 100vh;
+  background-color: rgb(248 250 252); /* slate-50 */
+}
+
+html.dark #__next {
+  background-color: rgb(2 6 23); /* slate-950 */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -43,4 +93,45 @@
   .back-home-btn {
     @apply inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200 mb-6;
   }
+}
+
+/* Loading skeleton animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Spinner animation for page transitions */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade in animation for content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
 }
