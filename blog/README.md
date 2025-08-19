@@ -70,7 +70,7 @@ blog/
 
 ## Adding New Blog Posts
 
-1. Create a new Markdown file in `app/posts/` with the following frontmatter:
+1. Create a new Markdown file in `posts_md/` with the following frontmatter:
    ```markdown
    ---
    title: "Your Post Title"

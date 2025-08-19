@@ -52,7 +52,7 @@ This automatically:
 4. Cleans up build artifacts
 
 ### Adding New Posts
-1. Create `.md` files in `/blog/app/posts/`
+1. Create `.md` files in `/blog/posts_md/`
 2. Add YAML frontmatter (title, date, description, tags)
 3. Write content in Markdown
 4. Run `npm run build`

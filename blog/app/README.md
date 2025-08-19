@@ -28,7 +28,7 @@ Builds the blog and outputs static files to `../posts/` directory for deployment
 blog/
 ├── app/                    # Source code (this directory)
 │   ├── pages/            # Next.js pages
-│   ├── posts/            # Markdown source files
+│   ├── posts_md/         # Markdown source files
 │   ├── styles/           # CSS styles
 │   ├── lib/              # Utility functions
 │   └── package.json      # Dependencies
@@ -42,7 +42,7 @@ blog/
 
 ## Build Process
 
-1. **Source**: Markdown files in `app/posts/`
+1. **Source**: Markdown files in `../posts_md/`
 2. **Build**: Next.js generates HTML in `../posts/`
 3. **Deploy**: Upload the `posts/` directory to your web server
 
