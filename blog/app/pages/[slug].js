@@ -1,44 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import { getAllPostIds, getPostData } from '../lib/posts'
 
 export default function Post({ postData }) {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Simulate loading state for smoother transitions
-    const timer = setTimeout(() => setIsLoading(false), 5)
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (isLoading) {
-    return (
-      <div className="mx-auto max-w-4xl px-4 py-8">
-        <div className="animate-pulse">
-          {/* Post header skeleton */}
-          <section className="mb-12">
-            <div className="text-center">
-              <div className="w-3/4 h-12 bg-slate-200 dark:bg-slate-700 rounded mx-auto mb-4"></div>
-              <div className="w-1/2 h-6 bg-slate-200 dark:bg-slate-700 rounded mx-auto mb-4"></div>
-              <div className="w-2/3 h-6 bg-slate-200 dark:bg-slate-700 rounded mx-auto"></div>
-            </div>
-          </section>
-          
-          {/* Post content skeleton */}
-          <section className="mb-16">
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-12 shadow-soft bg-white dark:bg-slate-900">
-              <div className="space-y-4">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className="w-full h-4 bg-slate-200 dark:bg-slate-700 rounded"></div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8">

@@ -11,8 +11,9 @@ const nextConfig = {
     basePath: '/blog',
     assetPrefix: '/blog',
   }),
-  // For local development, use relative paths for assets
-  assetPrefix: isProduction ? '/blog' : './',
+  // For local development, use absolute paths from posts directory
+  // This ensures CSS works from both posts/ and posts/hello-world/ directories
+  assetPrefix: isProduction ? '/blog' : '/blog/posts',
   distDir: '../posts',
   images: {
     unoptimized: true
