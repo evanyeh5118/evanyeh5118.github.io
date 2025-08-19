@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><script>
+                (function() {
+                  try {
+                    var theme = localStorage.getItem('theme') || 'light';
+                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    var initialTheme = theme === 'system' ? (prefersDark ? 'dark' : 'light') : theme;
+                    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+                  } catch (e) {}
+                })();
+              </script><title>Birth of my personal space and blog!<!-- --> - Yu Yeh</title><meta name="description" content="Rome is not built in a day, nor the website."/><link rel="icon" href="/favicon.ico"/><meta name="next-head-count" content="6"/><script>
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme') || 'light';
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var initialTheme = theme === 'system' ? (prefersDark ? 'dark' : 'light') : theme;
+                  
+                  // Apply theme immediately
+                  if (initialTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.style.colorScheme = 'dark';
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.style.colorScheme = 'light';
+                  }
+                  
+                  // Set background color immediately to prevent flash
+                  document.documentElement.style.backgroundColor = initialTheme === 'dark' ? 'rgb(2 6 23)' : 'rgb(248 250 252)';
+                  document.documentElement.style.color = initialTheme === 'dark' ? 'rgb(248 250 252)' : 'rgb(15 23 42)';
+                  
+                  // Also set body background to prevent any remaining flash
+                  document.body.style.backgroundColor = initialTheme === 'dark' ? 'rgb(2 6 23)' : 'rgb(248 250 252)';
+                  document.body.style.color = initialTheme === 'dark' ? 'rgb(248 250 252)' : 'rgb(15 23 42)';
+                } catch (e) {
+                  // Fallback to light theme if localStorage is not available
+                  document.documentElement.style.backgroundColor = 'rgb(248 250 252)';
+                  document.documentElement.style.color = 'rgb(15 23 42)';
+                  document.body.style.backgroundColor = 'rgb(248 250 252)';
+                  document.body.style.color = 'rgb(15 23 42)';
+                }
+              })();
+            </script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><meta name="color-scheme" content="light dark"/><meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)"/><meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)"/><style>
+              html {
+                background-color: rgb(248 250 252) !important;
+                color: rgb(15 23 42) !important;
+              }
+              body {
+                background-color: rgb(248 250 252) !important;
+                color: rgb(15 23 42) !important;
+                margin: 0 !important;
+                padding: 0 !important;
+              }
+              html.dark {
+                background-color: rgb(2 6 23) !important;
+                color: rgb(248 250 252) !important;
+              }
+              html.dark body {
+                background-color: rgb(2 6 23) !important;
+                color: rgb(248 250 252) !important;
+              }
+            </style><link rel="preload" href="/blog/posts/_next/static/css/4ff8987197241ee8.css" as="style"/><link rel="stylesheet" href="/blog/posts/_next/static/css/4ff8987197241ee8.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/blog/posts/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/blog/posts/_next/static/chunks/webpack-7ccef129fa8a3e1a.js" defer=""></script><script src="/blog/posts/_next/static/chunks/framework-b39550991c1bc003.js" defer=""></script><script src="/blog/posts/_next/static/chunks/main-a568e19a92d5412a.js" defer=""></script><script src="/blog/posts/_next/static/chunks/pages/_app-ce327877116c43cb.js" defer=""></script><script src="/blog/posts/_next/static/chunks/664-339c0d1773136295.js" defer=""></script><script src="/blog/posts/_next/static/chunks/pages/%5Bslug%5D-b05c7e7705f90054.js" defer=""></script><script src="/blog/posts/_next/static/SvaCpG4nKGUdnawhBDWR7/_buildManifest.js" defer=""></script><script src="/blog/posts/_next/static/SvaCpG4nKGUdnawhBDWR7/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white"><header class="backdrop-blur bg-white/80 dark:bg-slate-900/80 border-b border-slate-200/60 dark:border-slate-700/60 fixed top-0 left-0 right-0 z-50" style="height:100px"><div class="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between" style="height:100%"><a href="/" class="flex items-center gap-3" style="height:100%"><div class="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 grid place-items-center font-bold text-lg" style="height:40px;width:40px">Y</div><span class="font-semibold text-2xl" style="line-height:40px">葉語 (Yu Yeh) 🧋🇹🇼</span></a><nav class="flex items-center gap-5 text-base" style="height:100%"><a href="/timeline_full/timeline.html" class="hover:underline text-base flex items-center" style="height:40px">Timelines</a><a href="/publications/publications.html" class="hover:underline text-base flex items-center" style="height:40px">Publications</a><a href="/projects/projects.html" class="hover:underline text-base flex items-center" style="height:40px">Projects</a><a href="/share/share.html" class="hover:underline text-base flex items-center" style="height:40px">Resources</a><a href="/blog/posts/" class="hover:underline text-base flex items-center" style="height:40px">Blog</a><button id="themeToggle" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm" style="height:36px">Toggle theme</button></nav></div></header><main class="pt-[100px]"><div class="mx-auto max-w-4xl px-4 py-8"><section class="mb-12"><div class="text-center"><h1 class="text-4xl font-bold mb-4">Birth of my personal space and blog!</h1><div class="flex items-center justify-center gap-4 text-slate-400 dark:text-slate-200 mb-4"><time class="italic">August 19, 2025</time><div class="flex gap-2"><span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-xs text-slate-500 dark:text-slate-100">personal</span></div></div><p class="text-xl text-slate-400 dark:text-slate-200">Rome is not built in a day, nor the website.</p></div></section><section class="mb-16"><div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-12 shadow-soft bg-white dark:bg-slate-900"><article class="prose prose-xl dark:prose-invert max-w-none"><div class="prose prose-slate dark:prose-invert max-w-none text-lg leading-relaxed"><h2>Building My Personal Website &#x26; Blog</h2>
+<p>Hello and welcome! 👋</p>
+<p>I’ve recently taken the step of creating my own personal website and blog. This space is meant to be a central hub where I can share my academic journey, research interests, and personal projects. The blog will also serve as a space for sharing thoughts on my research life, my PhD career and some thoughts!</p>
+<h2>A Bit About Me</h2>
+<p>My background is in <strong>control systems, optimization, and information processing</strong>, with applications ranging from self-driving cars to optimal resource scheduling in communication systems. I’m currently pursuing my PhD, focusing on the <strong>co-design of control and communication</strong>. Along the way, I’ve developed strong foundations in reinforcement learning, stochastic processes, and optimization theory, and I continue to explore how these ideas connect across engineering and finance.</p>
+<h2>Looking Ahead</h2>
+<p>My plan for the near future is to continue deepening my research and publish work that contributes meaningfully to the fields of <strong>optimization and intelligent decision-making</strong>. Long-term, I hope to transition into a role at a <strong>major software or research-driven company</strong>, where I can apply my skills in real-world systems while also keeping space for creative projects like this website and blog.</p>
+<p>Thanks for stopping by — I’ll be updating this site regularly with new posts, resources, and updates on my journey. Stay tuned!</p>
+</div></article></div></section><section class="mb-16 text-center"><a href="/blog/posts/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm shadow-soft hover:opacity-90 transition-opacity">← Back to Blog</a></section></div></main></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"slug":"inital_post","contentHtml":"\u003ch2\u003eBuilding My Personal Website \u0026#x26; Blog\u003c/h2\u003e\n\u003cp\u003eHello and welcome! 👋\u003c/p\u003e\n\u003cp\u003eI’ve recently taken the step of creating my own personal website and blog. This space is meant to be a central hub where I can share my academic journey, research interests, and personal projects. The blog will also serve as a space for sharing thoughts on my research life, my PhD career and some thoughts!\u003c/p\u003e\n\u003ch2\u003eA Bit About Me\u003c/h2\u003e\n\u003cp\u003eMy background is in \u003cstrong\u003econtrol systems, optimization, and information processing\u003c/strong\u003e, with applications ranging from self-driving cars to optimal resource scheduling in communication systems. I’m currently pursuing my PhD, focusing on the \u003cstrong\u003eco-design of control and communication\u003c/strong\u003e. Along the way, I’ve developed strong foundations in reinforcement learning, stochastic processes, and optimization theory, and I continue to explore how these ideas connect across engineering and finance.\u003c/p\u003e\n\u003ch2\u003eLooking Ahead\u003c/h2\u003e\n\u003cp\u003eMy plan for the near future is to continue deepening my research and publish work that contributes meaningfully to the fields of \u003cstrong\u003eoptimization and intelligent decision-making\u003c/strong\u003e. Long-term, I hope to transition into a role at a \u003cstrong\u003emajor software or research-driven company\u003c/strong\u003e, where I can apply my skills in real-world systems while also keeping space for creative projects like this website and blog.\u003c/p\u003e\n\u003cp\u003eThanks for stopping by — I’ll be updating this site regularly with new posts, resources, and updates on my journey. Stay tuned!\u003c/p\u003e\n","title":"Birth of my personal space and blog!","date":"2025-08-19","description":"Rome is not built in a day, nor the website.","tags":["personal"]}},"__N_SSG":true},"page":"/[slug]","query":{"slug":"inital_post"},"buildId":"SvaCpG4nKGUdnawhBDWR7","assetPrefix":"/blog/posts","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
