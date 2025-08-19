@@ -1,4 +1,11 @@
 [
+   {
+    "title": "Policy Gradient Methods",
+    "description": "A slide for explaining policy gradient method and Actor-critic algorithm in RL",
+    "url": "http://faculty.bicmr.pku.edu.cn/~wenzw/bigdata/lect-policy.pdf",
+    "category": "Books",
+    "image": "http://faculty.bicmr.pku.edu.cn/~wenzw/bigdata/lect-policy.pdf"
+  },
   {
     "title": "A Gentle Introduction to Offline Reinforcement Learning",
     "description": "A non-technical introduction to offline reinforcement learning.",
