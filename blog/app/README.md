@@ -16,13 +16,11 @@ npm run build
 ```
 Builds the blog and outputs static files to `../posts/` directory.
 
-### 3. **Build and Copy**
+### 3. **Export**
 ```bash
-npm run build:copy
-# or
 npm run export
 ```
-Builds the blog and copies all files from `../posts/` to the blog root directory for deployment.
+Builds the blog and outputs static files to `../posts/` directory for deployment.
 
 ## Directory Structure
 
@@ -33,7 +31,6 @@ blog/
 │   ├── posts/            # Markdown source files
 │   ├── styles/           # CSS styles
 │   ├── lib/              # Utility functions
-│   ├── build.js          # Build script
 │   └── package.json      # Dependencies
 ├── posts/                 # Build output (generated HTML)
 │   ├── index.html        # Main blog page
@@ -41,31 +38,24 @@ blog/
 │   ├── _next/            # Next.js assets
 │   ├── hello-world/      # Post directory
 │   └── getting-started-with-nextjs/  # Post directory
-├── _next/                 # Legacy assets (can be cleaned up)
-├── hello-world/           # Copied from posts/ (for deployment)
-├── getting-started-with-nextjs/  # Copied from posts/ (for deployment)
-├── 404/                  # Copied from posts/ (for deployment)
-├── index.html            # Copied from posts/ (for deployment)
-└── 404.html             # Copied from posts/ (for deployment)
 ```
 
 ## Build Process
 
 1. **Source**: Markdown files in `app/posts/`
 2. **Build**: Next.js generates HTML in `../posts/`
-3. **Copy**: `build.js` copies files to blog root for deployment
-4. **Deploy**: Upload the blog root directory to your web server
+3. **Deploy**: Upload the `posts/` directory to your web server
 
 ## Why This Structure?
 
 - **Development**: Clean separation of source and build files
 - **Organization**: All generated content in one place (`/posts/`)
-- **Deployment**: Easy to upload entire blog directory
+- **Deployment**: Simple - just upload the `posts/` directory
 - **Maintenance**: Clear distinction between source and output
+- **No Duplication**: Single source of truth for all built files
 
 ## Commands Summary
 
 - `npm run dev` - Development server
 - `npm run build` - Build only (outputs to `/posts/`)
-- `npm run build:copy` - Build and copy to root (for deployment)
-- `npm run export` - Same as build:copy (legacy command)
+- `npm run export` - Build and export (outputs to `/posts/`)

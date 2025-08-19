@@ -4,7 +4,7 @@ import Head from 'next/head'
 import PageTransition from '../components/PageTransition'
 
 export default function App({ Component, pageProps }) {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
@@ -16,17 +16,10 @@ export default function App({ Component, pageProps }) {
     setTheme(initialTheme)
     document.documentElement.classList.toggle('dark', initialTheme === 'dark')
     
-    // Initialize theme toggle functionality
-    if (typeof window !== 'undefined') {
-      import('../../../js/theme-toggle.js').then(({ initThemeToggle }) => {
-        initThemeToggle();
-        setIsLoading(false);
-      }).catch(() => {
-        setIsLoading(false);
-      });
-    } else {
-      setIsLoading(false);
-    }
+    // Initialize theme toggle functionality after component mounts
+    setTimeout(() => {
+      initFallbackThemeToggle();
+    }, 100);
   }, []);
 
   // Prevent flash by setting initial theme in head
@@ -37,6 +30,21 @@ export default function App({ Component, pageProps }) {
       document.documentElement.classList.remove('dark')
     }
   }, [theme])
+
+  // Fallback theme toggle implementation
+  const initFallbackThemeToggle = () => {
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        localStorage.setItem('theme', newTheme);
+        document.documentElement.classList.toggle('dark', newTheme === 'dark');
+        setTheme(newTheme);
+      });
+    }
+  };
 
   if (isLoading) {
     return (
