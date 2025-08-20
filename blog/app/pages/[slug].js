@@ -99,22 +99,11 @@ export default function Post({ postData }) {
         </script>
       </Head>
 
-      {/* Breadcrumb Navigation */}
-      <nav className="text-sm text-slate-600 dark:text-slate-400 mb-6" aria-label="Breadcrumb">
-        <ol className="flex items-center space-x-2">
-          <li><a href="/" className="hover:text-slate-900 dark:hover:text-slate-100">Home</a></li>
-          <li className="text-slate-400">/</li>
-          <li><a href="/blog/" className="hover:text-slate-900 dark:hover:text-slate-100">Blog</a></li>
-          <li className="text-slate-400">/</li>
-          <li className="text-slate-900 dark:text-slate-100">{postData.title}</li>
-        </ol>
-      </nav>
-
       {/* Article Header */}
       <article className="mb-16">
-        <header className="mb-8">
+        <header className="mb-8 text-center">
           <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
-          <div className="flex items-center gap-4 mb-4 text-sm text-slate-600 dark:text-slate-400">
+          <div className="flex items-center justify-center gap-4 mb-4 text-sm text-slate-600 dark:text-slate-400">
             <time dateTime={postData.date} className="italic">
               {new Date(postData.date).toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -126,7 +115,7 @@ export default function Post({ postData }) {
             <span>By Yu Yeh</span>
           </div>
           {postData.tags && postData.tags.length > 0 && (
-            <div className="flex gap-2 flex-wrap mb-4">
+            <div className="flex gap-2 flex-wrap justify-center mb-4">
               {postData.tags.map(tag => (
                 <span key={tag} className="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-xs text-slate-700 dark:text-slate-300">
                   {tag}
@@ -141,25 +130,21 @@ export default function Post({ postData }) {
           )}
         </header>
 
-        {/* Article Content */}
-        <div className="prose prose-lg dark:prose-invert max-w-none">
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        {/* Article Content Container */}
+        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-8">
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          </div>
         </div>
       </article>
 
       {/* Navigation */}
-      <nav className="flex justify-between items-center pt-8 border-t border-slate-200 dark:border-slate-700">
+      <nav className="flex justify-center items-center pt-8 border-t border-slate-200 dark:border-slate-700">
         <a
           href="/blog/"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm shadow-soft hover:opacity-90 transition-opacity"
         >
           ← Back to Blog
-        </a>
-        <a
-          href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-        >
-          Home
         </a>
       </nav>
     </div>
