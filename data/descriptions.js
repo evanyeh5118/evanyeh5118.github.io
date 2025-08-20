@@ -32,11 +32,11 @@ function getDisplayName(key) {
 
 // Define description with placeholders
 export const heroDescription = 
-"I am currently a PhD student at {centralesupelec}, France, where \
+"I am a Taiwanese PhD student studying at {centralesupelec}, University Paris-Saclay, France, where \
 I focus on the joint design of control and communication in 5G/6G Tactile Internet, \
 under the supervision of my supervisor, {salah}, and my co-supervisor, {vineeth}.\n\n \
 I'm now in the {toast} project, a Doctoral Network under {marieSklodowskaCurie} training PhD candidates \
-across six European countries in the interdisciplinary field of the Tactile Internet—encompassing haptics, \
+across five European countries in the interdisciplinary field of the Tactile Internet—encompassing haptics, \
 teleoperation, edge intelligence, networking, machine learning, and open-source testbed development.\n\n \
 My research emphasizes the integration of control and communication systems to address \
 challenges in latency, reliability, and efficiency, enabling advanced applications \
