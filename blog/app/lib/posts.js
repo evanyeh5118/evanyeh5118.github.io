@@ -3,6 +3,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import remarkImages from 'remark-images'
+import remarkGfm from 'remark-gfm'
 
 const postsDirectory = path.join(process.cwd(), '..', 'posts_md')
 
@@ -55,8 +57,10 @@ export async function getPostData(slug) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
 
-  // Use remark to convert markdown into HTML string
+  // Use remark to convert markdown into HTML string with image and GFM support
   const processedContent = await remark()
+    .use(remarkGfm)
+    .use(remarkImages)
     .use(html)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
