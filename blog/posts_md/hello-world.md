@@ -38,6 +38,12 @@ function Greeting({ name }) {
 }
 ```
 
+## Website Architecture
+
+Here's a simple diagram showing the structure of my website:
+
+![Website Architecture](/images/posts/inital_post/website-architecture.png)
+
 ## Next steps
 
 I'm excited to start sharing more content here. Stay tuned for:
