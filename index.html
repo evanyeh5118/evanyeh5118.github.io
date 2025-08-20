@@ -3,9 +3,70 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Your Name — Interactive Persona</title>
-    <meta name="description" content="Personal homepage and projects of Your Name. Researcher • Builder • Problem Solver" />
+    <title>Yu Yeh — Interactive Persona | Researcher • Builder • Problem Solver</title>
+    <meta name="description" content="Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver. Explore publications, projects, and professional experience." />
+    <meta name="keywords" content="Yu Yeh, researcher, builder, problem solver, publications, projects, academic, professional portfolio" />
+    <meta name="author" content="Yu Yeh" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://evanyeh5118.github.io/" />
     <link rel="icon" href="data:," />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yu Yeh",
+      "jobTitle": "Researcher • Builder • Problem Solver",
+      "description": "Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver",
+      "url": "https://evanyeh5118.github.io/",
+      "sameAs": [
+        "https://github.com/evanyeh5118"
+      ],
+      "knowsAbout": ["Research", "Building", "Problem Solving", "Publications", "Projects"],
+      "image": "https://evanyeh5118.github.io/assets/images/profile_photo.jpg",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Independent Researcher"
+      }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Yu Yeh - Personal Website",
+      "url": "https://evanyeh5118.github.io/",
+      "description": "Personal homepage and projects of Yu Yeh",
+      "publisher": {
+        "@type": "Person",
+        "name": "Yu Yeh"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://evanyeh5118.github.io/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://evanyeh5118.github.io/"
+        }
+      ]
+    }
+    </script>
 
     <!-- Prevent flash of unstyled content -->
     <script>
@@ -87,20 +148,23 @@
     </style>
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Yu Yeh — Personal website" />
-    <meta property="og:description" content="Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver" />
+    <meta property="og:title" content="Yu Yeh — Interactive Persona | Researcher • Builder • Problem Solver" />
+    <meta property="og:description" content="Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver. Explore publications, projects, and professional experience." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://evanyeh5118.github.io/" />
-    <meta property="og:image" content="https://evanyeh5118.github.io/og.png" />
+    <meta property="og:image" content="https://evanyeh5118.github.io/assets/images/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Your Name - Interactive Persona" />
+    <meta property="og:image:alt" content="Yu Yeh - Interactive Persona" />
+    <meta property="og:site_name" content="Yu Yeh - Personal Website" />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Your Name — Interactive Persona" />
-    <meta name="twitter:description" content="Personal homepage and projects of Your Name. Researcher • Builder • Problem Solver" />
-    <meta name="twitter:image" content="https://evanyeh5118.github.io/og.png" />
+    <meta name="twitter:title" content="Yu Yeh — Interactive Persona | Researcher • Builder • Problem Solver" />
+    <meta name="twitter:description" content="Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver. Explore publications, projects, and professional experience." />
+    <meta name="twitter:image" content="https://evanyeh5118.github.io/assets/images/og.png" />
+    <meta name="twitter:creator" content="@evanyeh5118" />
     
     <meta name="theme-color" content="#0f172a" />
   </head>

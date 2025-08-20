@@ -48,15 +48,19 @@ export default function Home({ allPostsData }) {
                   day: 'numeric'
                 })}
               </time>
-              <div className="flex gap-2 flex-wrap">
-                {tags.map(tag => (
-                  <span key={tag} className="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-xs text-slate-700 dark:text-slate-300">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+              {tags && tags.length > 0 && (
+                <div className="flex gap-2 flex-wrap">
+                  {tags.map(tag => (
+                    <span key={tag} className="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full text-xs text-slate-700 dark:text-slate-300">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
-            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{description}</p>
+            {description && (
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{description}</p>
+            )}
           </article>
         ))}
         </div>
