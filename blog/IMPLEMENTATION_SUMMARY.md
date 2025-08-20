@@ -41,10 +41,16 @@ blog/app/public/images/posts/
 3. **Add images** to `blog/app/public/images/posts/your-post-slug/`
 4. **Reference images** in your markdown:
    ```markdown
-   ![Alt text](/images/posts/your-post-slug/image.png)
+   ![Alt text](/blog/posts/images/posts/your-post-slug/image.png)
    
    *Figure 1: Description of the figure*
    ```
+
+### ⚠️ Important Note on Image Paths
+Due to the Next.js configuration with `assetPrefix: '/blog/posts'`, all image references must include the full path prefix: `/blog/posts/images/posts/your-post-slug/image.png`
+
+**Correct format**: `/blog/posts/images/posts/[post-slug]/[image-name].[ext]`
+**Incorrect format**: `/images/posts/[post-slug]/[image-name].[ext]`
 
 ### Supported Image Formats
 - PNG, JPEG, GIF, SVG, WebP
@@ -58,7 +64,7 @@ Your `inital_post.md` has been updated with an example figure:
 
 Here's a simple diagram showing the structure of my website:
 
-![Website Architecture](/images/posts/inital_post/website-architecture.png)
+![Website Architecture](/blog/posts/images/posts/inital_post/website-architecture.png)
 
 *Figure 1: Overview of my personal website structure*
 ```
@@ -77,6 +83,24 @@ The implementation has been tested:
 - ✅ Helper script creates directories correctly
 - ✅ Markdown processing includes image support
 - ✅ All dependencies are properly installed
+
+## 🚨 Troubleshooting
+
+### Common Image Issues
+
+**Problem**: Images not displaying in blog posts
+**Solution**: Ensure you're using the correct path format:
+- ✅ **Correct**: `/blog/posts/images/posts/your-post-slug/image.png`
+- ❌ **Incorrect**: `/images/posts/your-post-slug/image.png`
+
+**Problem**: Build fails with image-related errors
+**Solution**: 
+1. Verify the image file exists in `blog/app/public/images/posts/your-post-slug/`
+2. Check that the markdown path matches exactly
+3. Rebuild with `npm run build` in the `blog/app/` directory
+
+**Problem**: Images work locally but not after deployment
+**Solution**: This is expected behavior due to the `assetPrefix` configuration. The paths are correct for your setup.
 
 ## 📚 Resources
 

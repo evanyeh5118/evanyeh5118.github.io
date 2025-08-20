@@ -19,3 +19,5 @@ My plan for the near future is to continue deepening my research and publish wor
 
 Thanks for stopping by — I'll be updating this site regularly with new posts, resources, and updates on my journey. Stay tuned!
 
+I attach below a nice figure from Aarhus, Demamark when I did my secondment in this May.
+![Alt text](/blog/posts/images/posts/inital_post/og.png)
