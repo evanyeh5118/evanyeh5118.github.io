@@ -225,8 +225,8 @@
             <p class="text-slate-700 dark:text-slate-300 whitespace-pre-line">
               <span id="heroDescription"></span>
               <script type="module">
-                import { heroDescription } from './data/descriptions.js';
-                document.getElementById('heroDescription').textContent = heroDescription;
+                import { heroDescription, urls, renderDescriptionWithUrls } from './data/descriptions.js';
+                renderDescriptionWithUrls('heroDescription', heroDescription, urls);
               </script>
             </p>
             <div class="flex gap-3 flex-wrap justify-start text-left mt-4">
