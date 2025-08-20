@@ -20,7 +20,6 @@ Here's a simple diagram showing the structure of my website:
 
 ![Website Architecture](/images/posts/inital_post/website-architecture.png)
 
-*Figure 1: Overview of my personal website structure*
 
 ## Looking Ahead
 My plan for the near future is to continue deepening my research and publish work that contributes meaningfully to the fields of **optimization and intelligent decision-making**. Long-term, I hope to transition into a role at a **major software or research-driven company**, where I can apply my skills in real-world systems while also keeping space for creative projects like this website and blog.  
