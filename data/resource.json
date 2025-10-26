@@ -1,4 +1,11 @@
 [
+  {
+    "title": "MCMC, VI, and reverse diffusion Monte Carlo",
+    "description": "Markov chain Monte Carlo (MCMC) for variational inference.",
+    "url": "https://www.youtube.com/watch?v=Dw4QGVB5vQg&t=1072s",
+    "category": "Talks",
+    "image": "https://img.youtube.com/vi/Dw4QGVB5vQg/mqdefault.jpg"
+  },
    {
     "title": "Reinforcement Learning: An Introduction",
     "description": "Book for RL",
