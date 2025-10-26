@@ -93,6 +93,11 @@ function initPublications() {
               el("div", { 
                 class: "publication-expandable max-h-0 opacity-0 transition-all duration-300 ease-in-out overflow-hidden"
               },
+                pub.abstract ? el(
+                  "div", 
+                  { class: "text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed border-t border-slate-200 dark:border-slate-700 pt-4 mt-3" },
+                  pub.abstract
+                ) : null,
                 links.length ? el("div", { class: "mb-3 flex gap-2 flex-wrap" }, links) : null,
                 tags.length ? el("div", { class: "flex gap-2 flex-wrap" }, tags) : null
               )
@@ -102,7 +107,7 @@ function initPublications() {
             pubCard.addEventListener('mouseenter', () => {
               const expandable = pubCard.querySelector('.publication-expandable');
               if (expandable) {
-                expandable.style.maxHeight = '200px';
+                expandable.style.maxHeight = '500px';
                 expandable.style.opacity = '1';
                 pubCard.style.padding = '24px';
               }
