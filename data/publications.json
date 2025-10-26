@@ -1,6 +1,30 @@
 [
+  {
+    "year": 2025,
+    "title": "Data-driven Context-Aware Traffic Prediction and Modeling for Tactile Internet",
+    "authors": "Y Yeh, SN Özsert, D Prattichizzo, VS Varma, SE Elayoubi",
+    "venue": "European Wireless 2025",
+    "links": { 
+      "pdf": "#", 
+      "Link": "https://hal.science/hal-05269390v1/file/EW_25_final_03.pdf", 
+      "code": "#" 
+    },
+    "tags": ["Tactile Internet","Traffic Modeling", "Traffic Prediction", "Data-driven approach"]
+  },
     {
       "year": 2025,
+      "title": "Optimistic Constrained Online Convex Optimization for Resource Reservation in Tactile Internet",
+      "authors": "Yu Yeh, Vineeth S Varma, Salah E Elayoubi",
+      "venue": "IEEE Globecom 2025",
+      "links": { 
+        "pdf": "#", 
+        "Link": "https://hal.science/hal-05268651v1/file/2025292806_03.pdf", 
+        "code": "#" 
+      },
+      "tags": ["Tactile Internet","Optomistic Constrained Online Convex Optimization"]
+    }, 
+    {
+      "year": 2024,
       "title": "AoI-based switching control for safe haptic teleoperation over a wireless network",
       "authors": "Yu Yeh, Vineeth S Varma, Salah E Elayoubi",
       "venue": "IEEE CDC 2024",

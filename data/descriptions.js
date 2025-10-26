@@ -3,7 +3,7 @@ export const urls = {
   centralesupelec: 'https://www.centralesupelec.fr/',
   nycu: 'https://www.nycu.edu.tw/',
   ipParis: 'https://www.ip-paris.fr/',
-  salah: 'https://www.salah-elayoubi.com/',
+  salah: 'https://scholar.google.com/citations?user=JR5JJEjJsIwC&hl=en&oi=ao',
   vineeth: 'https://scholar.google.com/citations?hl=en&user=I42FdXUAAAAJ',
   toast: 'https://www.toast-dn.eu/home-page',
   marieSklodowskaCurie: 'https://marie-sklodowska-curie-actions.ec.europa.eu/actions/doctoral-networks',
