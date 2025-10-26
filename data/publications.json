@@ -4,7 +4,7 @@
     "title": "Optimistic Constrained Online Convex Optimization for Resource Reservation in Tactile Internet",
     "authors": "Yu Yeh, Vineeth S Varma, Salah E Elayoubi",
     "venue": "IEEE Globecom 2025",
-    "abstract": "This paper addresses the resource reservation problem in Tactile Internet applications by proposing an optimistic constrained online convex optimization (OCCO) framework. We develop algorithms that leverage future information to improve resource allocation while respecting constraints, achieving significant performance improvements in haptic communication systems.",
+    "abstract": "Tactile Internet has emerged as a cutting-edge application in 5G, aligning with requirements of Ultra-Reliable Low-Latency Communications (URLLC), and is expected to be an essential service in 6G. TI service traffic is characterized by a high burstiness, and the design of effective resource reservation strategies remains an open research in this context. To address this challenge, we formulate the resource reservation problem in the Tactile Internet as an online decision-making task and address it by applying Optimistic Constrained Online Convex Optimization, profiting from Tactile Internet traffic prediction capabilities. We validate the proposed optimistic algorithm by utilizing a traffic dataset based on a self-developed hapticvisual testbed, demonstrating the optimistic algorithm's superior performance compared to the non-optimistic baseline.",
     "links": { 
       "pdf": "#", 
       "Link": "https://hal.science/hal-05268651v1/file/2025292806_03.pdf", 
@@ -17,7 +17,7 @@
     "title": "Data-driven Context-Aware Traffic Prediction and Modeling for Tactile Internet",
     "authors": "Y Yeh, SN Özsert, D Prattichizzo, VS Varma, SE Elayoubi",
     "venue": "European Wireless 2025",
-    "abstract": "We present a novel data-driven approach for predicting and modeling traffic in Tactile Internet scenarios. By leveraging context-aware machine learning techniques, our method accurately forecasts network traffic patterns, enabling more efficient resource management and improved quality of service for haptic applications.",
+    "abstract": "We propose a data-driven, context-aware approach for traffic modeling and a traffic predictor to support resource reservation in the tactile internet for bursty traffic patterns caused by Deadband Perceptual Data Reduction (DPDR). The traffic state is defined as the number of arriving packets in the next time window, which is modeled and predicted based on historical context information, which refers to user motion commands or haptic feedback. Since traffic prediction in this context is traditionally challenging and often limited to binary state consideration, the proposed method provides a more general framework for multi-state applications. By using a manually collected dataset from a self-developed visuo-haptic experiment setup, the proposed method provides a superior performance in terms of traffic modeling and prediction, compared to its own benchmark.",
     "links": { 
       "pdf": "#", 
       "Link": "https://hal.science/hal-05269390v1/file/EW_25_final_03.pdf", 
@@ -31,7 +31,7 @@
       "title": "AoI-based switching control for safe haptic teleoperation over a wireless network",
       "authors": "Yu Yeh, Vineeth S Varma, Salah E Elayoubi",
       "venue": "IEEE CDC 2024",
-      "abstract": "This work introduces an Age of Information (AoI) based switching control framework for ensuring safe haptic teleoperation over wireless networks. By modeling the system as a Markov jump linear system and incorporating AoI metrics, we develop control strategies that maintain safety constraints while optimizing communication resource usage.",
+      "abstract": "In this paper, we propose a switching policy based on the Age of Information (AoI) to enhance safety in haptic teleoperation over a wireless network, which is a key application of interest in upcoming 6G networks. Given the unique challenges of human-in-the-loop scenarios, our focus is on safety-oriented control since imperfect transmissions could introduce safety risks in typical haptic teleoperation scenarios. We introduce an AoI-based Markov Jump Linear System (MJLS) to model the closed-loop system, considering the AoI-based safety switching policy. This policy activates a “safe” controller on the remote side when the AoI exceeds a predefined threshold. While the safe controller does not know the desired human control, it is able to bring the robot or plant to a safe state. For a given AoI-based threshold, we utilize MJLS properties to ensure closed-loop stability. We also introduce and optimize performance criteria that address safety issues as well as transparency for the human controller, i.e., how closely the system can follow the human’s intention. Numerical results demonstrate that our safe control scheme improves performance in 2D reference tracking tasks while ensuring safety and reducing undesirable behavior like overshoots.",
       "links": { 
         "pdf": "#", 
         "DOI: 10.1109/CDC56724.2024.10885873": "https://ieeexplore.ieee.org/abstract/document/10885873/", 
