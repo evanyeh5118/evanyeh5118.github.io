@@ -57,7 +57,7 @@ function initProjects() {
         const projectCard = el(
           "div",
           {
-            class: "rounded-2xl p-6 shadow-soft bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-shadow",
+            class: "project-card rounded-2xl p-6 shadow-soft bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-md transition-all",
           },
           el("div", { class: "font-semibold text-lg mb-2" }, project.title),
           el(

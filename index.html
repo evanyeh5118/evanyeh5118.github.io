@@ -1,403 +1,87 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Yu Yeh's Webpage</title>
-    <meta name="description" content="Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver. Explore publications, projects, and professional experience." />
-    <meta name="keywords" content="Yu Yeh, researcher, builder, problem solver, publications, projects, academic, professional portfolio" />
-    <meta name="author" content="Yu Yeh" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://evanyeh5118.github.io/" />
-    <link rel="icon" href="data:," />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yu Yeh — PhD Researcher in Networked Control and Tactile Internet</title>
+  <meta name="description" content="Yu Yeh is a PhD researcher at CentraleSupélec working on networked control, Tactile Internet, resource allocation, and learning for 5G/6G systems." />
+  <meta name="author" content="Yu Yeh" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://evanyeh5118.github.io/" />
+  <link rel="icon" href="assets/images/profile_photo.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <script>(function(){const t=localStorage.getItem('theme');const d=t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',d)})();</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{boxShadow:{soft:'0 10px 30px rgba(15,23,42,.08)'}}}}</script>
+  <meta property="og:title" content="Yu Yeh — PhD Researcher in Networked Control" />
+  <meta property="og:description" content="Research in Tactile Internet, networked control, resource allocation, and learning for 5G/6G systems." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://evanyeh5118.github.io/" />
+  <meta property="og:image" content="https://evanyeh5118.github.io/assets/images/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0f172a" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Yu Yeh","jobTitle":"PhD Researcher","url":"https://evanyeh5118.github.io/","image":"https://evanyeh5118.github.io/assets/images/profile_photo.jpg","affiliation":{"@type":"CollegeOrUniversity","name":"CentraleSupélec"},"sameAs":["https://github.com/evanyeh5118","https://www.linkedin.com/in/yu-yeh-163543198/","https://scholar.google.com/citations?user=AgPmc-cAAAAJ&hl=en"],"knowsAbout":["Networked control","Tactile Internet","5G and 6G networks","Online optimization","Machine learning"]}
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div id="banner-slot" class="sticky top-0 z-40"></div>
 
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Yu Yeh",
-      "jobTitle": "Researcher • Builder • Problem Solver",
-      "description": "Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver",
-      "url": "https://evanyeh5118.github.io/",
-      "sameAs": [
-        "https://github.com/evanyeh5118"
-      ],
-      "knowsAbout": ["Research", "Building", "Problem Solving", "Publications", "Projects"],
-      "image": "https://evanyeh5118.github.io/assets/images/profile_photo.jpg",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Independent Researcher"
-      }
-    }
-    </script>
-
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Yu Yeh - Personal Website",
-      "url": "https://evanyeh5118.github.io/",
-      "description": "Personal homepage and projects of Yu Yeh",
-      "publisher": {
-        "@type": "Person",
-        "name": "Yu Yeh"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://evanyeh5118.github.io/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://evanyeh5118.github.io/"
-        }
-      ]
-    }
-    </script>
-
-    <!-- Prevent flash of unstyled content -->
-    <script>
-      (function() {
-        const theme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.classList.toggle('dark', theme === 'dark');
-      })();
-    </script>
-
-    <!-- Theme will be set by JavaScript modules -->
-
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-    <!-- Tailwind (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            boxShadow: { soft: "0 10px 30px rgba(0,0,0,.10)" }
-          }
-        }
-      }
-    </script>
-
-    <style>
-      /* Hide scrollbar cross-browser for a specific container */
-      .hide-scrollbar {
-        -ms-overflow-style: none;      /* IE/Edge */
-        scrollbar-width: none;         /* Firefox */
-      }
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;                 /* Chrome/Safari/Opera */
-      }
-      
-      /* CSS-based theme fallback */
-      :root {
-        color-scheme: light dark;
-      }
-      
-      /* Prevent flash of unstyled content */
-      html.dark {
-        color-scheme: dark;
-      }
-      
-      /* Ensure theme toggle button is properly styled */
-      #themeToggle {
-        background: white;
-        color: #1e293b;
-        border: 1px solid #cbd5e1;
-        transition: all 0.2s ease;
-      }
-      
-      html.dark #themeToggle {
-        background: #1e293b;
-        color: white;
-        border-color: #475569;
-      }
-      
-      #themeToggle:hover {
-        opacity: 0.8;
-      }
-      
-      /* Publication block hover effects */
-      .publication-block {
-        transition: all 0.3s ease-in-out;
-      }
-      
-      .publication-expandable {
-        transition: all 0.3s ease-in-out;
-      }
-      
-       /* Add scroll offset for fixed header */
-      html {
-        scroll-padding-top: 110px;
-      }
-    </style>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Yu Yeh — Interactive Persona | Researcher • Builder • Problem Solver" />
-    <meta property="og:description" content="Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver. Explore publications, projects, and professional experience." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://evanyeh5118.github.io/" />
-    <meta property="og:image" content="https://evanyeh5118.github.io/assets/images/og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Yu Yeh - Interactive Persona" />
-    <meta property="og:site_name" content="Yu Yeh - Personal Website" />
-    <meta property="og:locale" content="en_US" />
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Yu Yeh — Interactive Persona | Researcher • Builder • Problem Solver" />
-    <meta name="twitter:description" content="Personal homepage and projects of Yu Yeh. Researcher • Builder • Problem Solver. Explore publications, projects, and professional experience." />
-    <meta name="twitter:image" content="https://evanyeh5118.github.io/assets/images/og.png" />
-    <meta name="twitter:creator" content="@evanyeh5118" />
-    
-    <meta name="theme-color" content="#0f172a" />
-  </head>
-
-  <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 text-xl">
-    <div id="banner-slot" class="sticky top-0 z-40"></div>
-    <script>
-      function loadBanner() {
-        fetch('/partials/banner.html')
-          .then(res => res.text())
-          .then(html => {
-            document.getElementById('banner-slot').innerHTML = html;
-            // Ensure the loaded banner maintains sticky positioning
-            const banner = document.querySelector('#banner-slot header');
-            if (banner) {
-              banner.classList.add('sticky', 'top-0', 'z-40');
-            }
-            // Initialize theme toggle for the dynamically loaded banner
-            import('./js/theme-toggle.js').then(module => {
-              // Small delay to ensure DOM is fully ready
-              setTimeout(() => {
-                module.initThemeToggle();
-              }, 100);
-            });
-          });
-      }
-
-      // Load banner immediately if DOM is ready, otherwise wait
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadBanner);
-      } else {
-        loadBanner();
-      }
-    </script>
-
-    <!-- Main -->
-    <main class="mx-auto max-w-5xl px-4">
-      <!-- Banner Image -->
-      <section class="mt-6 mb-8">
-        <img 
-          src="assets/images/og.png" 
-          alt="Your Name - Interactive Persona Banner" 
-          class="w-full h-auto rounded-2xl shadow-soft"
-          style="max-height: 400px; object-fit: cover;"
-        />
-      </section>
-      
-      <!-- Hero -->
-      <section class="mt-10 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-soft bg-white dark:bg-slate-900">
-        <div class="flex items-start gap-6 flex-col sm:flex-row">
-          <img 
-            src="assets/images/profile_photo.jpg" 
-            alt="Your Name - Profile Photo" 
-            class="w-32 h-32 rounded-full object-cover shadow-lg flex-shrink-0 mx-auto sm:mx-0"
-          />
-          <div class="flex-1 flex flex-col justify-center">
-            <h1 class="text-2xl font-semibold mb-2">Hello 👋</h1>
-            <p class="text-slate-700 dark:text-slate-300 whitespace-pre-line">
-              <span id="heroDescription"></span>
-              <script type="module">
-                import { heroDescription, urls, renderDescriptionWithUrls } from './data/descriptions.js';
-                renderDescriptionWithUrls('heroDescription', heroDescription, urls);
-              </script>
-            </p>
-            <div class="flex gap-3 flex-wrap justify-start text-left mt-4">
-              <!-- View CV Button -->
-              <a href="assets/files/cv.pdf" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 class="px-4 py-2 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm shadow-soft hover:opacity-90 transition-opacity">
-                View CV
-              </a>
-              
-              <!-- Download CV Button -->
-              <a href="assets/files/cv.pdf" 
-                 download="Yu_Yeh_CV.pdf"
-                 class="px-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                Download CV
-              </a>
-            </div>
-          </div>
+  <main id="main-content" class="mx-auto max-w-6xl px-4">
+    <section class="hero-shell py-12 md:py-20 text-white">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-panel rounded-2xl p-7 sm:p-10 md:p-12 grid md:grid-cols-[1fr_230px] gap-10 items-center max-w-5xl">
+      <div>
+        <p class="text-xs uppercase tracking-[.18em] font-bold text-sky-300 mb-5">Networked control · Tactile Internet · 5G/6G</p>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-.045em] leading-[.96]">Yu Yeh<span class="text-sky-400">.</span></h1>
+        <p class="mt-5 text-xl md:text-2xl text-slate-100">PhD Researcher at CentraleSupélec<br><span class="text-base text-slate-300">Université Paris-Saclay</span></p>
+        <p class="prose-copy mt-6 text-lg leading-relaxed text-slate-200">I study the joint design of communication and control for reliable, low-latency Tactile Internet systems. My work combines online optimization, traffic prediction, and safety-oriented control for emerging 5G/6G applications.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/publications/publications.html" class="px-5 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700">View publications</a>
+          <a href="assets/files/cv.pdf" target="_blank" rel="noopener" class="px-5 py-3 rounded-lg border border-white/40 bg-white/10 font-medium hover:bg-white/20">View CV</a>
+          <a href="https://scholar.google.com/citations?user=AgPmc-cAAAAJ&hl=en" target="_blank" rel="noopener" class="px-5 py-3 rounded-lg border border-white/40 bg-white/10 font-medium hover:bg-white/20">Google Scholar</a>
         </div>
-      </section>
-
-      <!-- Recent -->
-      <section id="recent" class="mt-10">
-        <h2 class="text-xl font-semibold mb-4">Recent</h2>
-        <div id="recentContainer" class="text-xl">
-          <div class="text-slate-500">Loading recent events...</div>
-        </div>
-      </section>
-
-      <!-- Publications -->
-      <section id="publications" class="mt-10">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-xl font-semibold">Publications</h2>
-          <div class="flex items-center gap-3">
-            <a href="/publications/publications.html" class="text-sm text-slate-600 dark:text-slate-300 hover:underline">View all →</a>
-            <div class="hidden sm:flex gap-2">
-              <button id="pubPrev"
-                      class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-                      aria-label="Scroll publications left">←</button>
-              <button id="pubNext"
-                      class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-                      aria-label="Scroll publications right">→</button>
-            </div>
-          </div>
-        </div>
-
-        <div id="pubStatus" class="text-sm text-slate-500 mb-2">Loading publications…</div>
-
-        <div id="pubScroller"
-            class="overflow-x-auto -mx-4 px-4 pb-2 hide-scrollbar overscroll-x-contain"
-            role="region" aria-label="Publications carousel">
-          <div id="pubTrack" class="flex gap-4 snap-x snap-mandatory"></div>
-        </div>
-
-        <div class="mt-3 flex sm:hidden justify-end gap-2">
-          <button id="pubPrevM"
-                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-                  aria-label="Scroll publications left">←</button>
-          <button id="pubNextM"
-                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-                  aria-label="Scroll publications right">→</button>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section id="projects" class="mt-10">
-        <div class="flex items-center justify-between mb-4">
-          <h2 class="text-xl font-semibold">Projects</h2>
-          <div class="flex items-center gap-3">
-            <a href="/projects/projects.html" class="text-sm text-slate-600 dark:text-slate-300 hover:underline">View all →</a>
-            <div class="hidden sm:flex gap-2">
-              <button id="projectsPrev"
-                      class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-                      aria-label="Scroll projects left">←</button>
-              <button id="projectsNext"
-                      class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-                      aria-label="Scroll projects right">→</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- The scroll container -->
-        <div id="projectsScroller"
-            class="overflow-x-auto -mx-4 px-4 pb-2 hide-scrollbar overscroll-x-contain"
-            role="region" 
-            aria-label="Projects carousel">
-          <!-- The horizontal track we’ll populate -->
-          <div id="projectsTrack"
-              class="flex gap-4 snap-x snap-mandatory">
-            <!-- cards injected by script.js -->
-          </div>
-        </div>
-
-        <!-- Mobile arrows -->
-        <div class="mt-3 flex sm:hidden justify-end gap-2">
-          <button id="projectsPrevMobile"
-                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-                  aria-label="Scroll projects left">←</button>
-          <button id="projectsNextMobile"
-                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm"
-                  aria-label="Scroll projects right">→</button>
-        </div>
-      </section>
-
-
-      <!-- Contact -->
-      <section id="contact" class="mt-10 mb-16">
-        <h2 class="text-xl font-semibold mb-6">Contact</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <a href="mailto:yu.yeh@centralesupelec.fr" 
-             class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-soft transition-all duration-200 group">
-            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800/50 transition-colors duration-200">
-              <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-lg"></i>
-            </div>
-            <div>
-              <div class="font-medium text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">Email</div>
-              <div class="text-sm text-slate-600 dark:text-slate-400">yu.yeh@centralesupelec.fr</div>
-            </div>
-          </a>
-          
-          <a href="https://github.com/evanyeh5118" 
-             target="_blank" 
-             rel="noreferrer"
-             class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-soft transition-all duration-200 group">
-            <div class="w-10 h-10 bg-gray-100 dark:bg-gray-900/30 rounded-lg flex items-center justify-center group-hover:bg-gray-200 dark:group-hover:bg-gray-800/50 transition-colors duration-200">
-              <i class="fab fa-github text-gray-700 dark:text-gray-300 text-lg"></i>
-            </div>
-            <div>
-              <div class="font-medium text-slate-900 dark:text-slate-100 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-200">GitHub</div>
-              <div class="text-sm text-slate-600 dark:text-slate-400">@evanyeh5118</div>
-            </div>
-          </a>
-          
-          <a href="https://www.linkedin.com/in/yu-yeh-163543198/" 
-             target="_blank" 
-             rel="noreferrer"
-             class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-soft transition-all duration-200 group">
-            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800/50 transition-colors duration-200">
-              <i class="fab fa-linkedin text-blue-600 dark:text-blue-400 text-lg"></i>
-            </div>
-            <div>
-              <div class="font-medium text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">LinkedIn</div>
-              <div class="text-sm text-slate-600 dark:text-slate-400">@yu-yeh-163543198/</div>
-            </div>
-          </a>
-          
-          <a href="https://scholar.google.com/citations?user=AgPmc-cAAAAJ&hl=en" 
-             target="_blank" 
-             rel="noreferrer"
-             class="flex items-center gap-3 p-4 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-soft transition-all duration-200 group">
-            <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center group-hover:bg-orange-200 dark:group-hover:bg-orange-800/50 transition-colors duration-200">
-              <i class="fas fa-graduation-cap text-orange-600 dark:text-orange-400 text-lg"></i>
-            </div>
-            <div>
-              <div class="font-medium text-slate-900 dark:text-slate-100 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-200">Google Scholar</div>
-              <div class="text-sm text-slate-600 dark:text-slate-400">Academic Profile</div>
-            </div>
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 dark:border-slate-700">
-      <div class="mx-auto max-w-5xl px-4 py-8 text-sm text-slate-500">
-        © <span id="year"></span> Yu Yeh's Personal Website • Built on GitHub Pages
       </div>
-    </footer>
+      <div class="relative"><div class="absolute -inset-5 border border-sky-300/30 rounded-full" aria-hidden="true"></div><img src="assets/images/profile_photo.jpg" alt="Portrait of Yu Yeh" width="280" height="280" class="hero-portrait relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full object-cover" /></div>
+      </div>
+    </section>
 
-    <script type="module" src="js/main.js"></script>
-  </body>
+    <section aria-labelledby="research-heading" class="py-12 border-t border-slate-200 dark:border-slate-800">
+      <p class="section-kicker mb-3">Research</p>
+      <h2 id="research-heading" class="text-3xl font-bold tracking-tight">Research focus</h2>
+      <div class="mt-7 grid md:grid-cols-3 gap-5">
+        <article data-number="01" class="research-card card-lift p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800"><div class="accent-rule mb-6"></div><h3 class="font-semibold text-xl">Networked control</h3><p class="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">Safety, stability, and transparency for haptic teleoperation over imperfect wireless networks.</p></article>
+        <article data-number="02" class="research-card card-lift p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 md:translate-y-6"><div class="accent-rule mb-6"></div><h3 class="font-semibold text-xl">Resource allocation</h3><p class="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">Online optimization methods for reserving radio resources under bursty and uncertain traffic.</p></article>
+        <article data-number="03" class="research-card card-lift p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800"><div class="accent-rule mb-6"></div><h3 class="font-semibold text-xl">Learning and prediction</h3><p class="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">Context-aware traffic models and learning methods for responsive Tactile Internet services.</p></article>
+      </div>
+    </section>
+
+    <section id="publications" aria-labelledby="publications-heading" class="py-12 border-t border-slate-200 dark:border-slate-800">
+      <div class="flex items-end justify-between gap-4"><div><p class="section-kicker mb-3">Selected work</p><h2 id="publications-heading" class="text-3xl font-bold tracking-tight">Publications</h2></div><a href="/publications/publications.html" class="text-blue-600 dark:text-blue-400 font-medium">View all →</a></div>
+      <div id="pubStatus" class="sr-only" aria-live="polite">Loading publications</div>
+      <div id="pubTrack" class="mt-7 space-y-4"></div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading" class="py-16 border-t border-slate-200 dark:border-slate-800">
+      <div class="feature-panel rounded-3xl p-8 md:p-12 text-white grid md:grid-cols-[.7fr_1.3fr] gap-8 md:gap-14 items-start">
+        <div class="relative z-10"><p class="text-xs uppercase tracking-widest font-bold text-sky-300 mb-3">Featured research</p><h2 id="projects-heading" class="text-3xl md:text-4xl font-bold tracking-tight">Tactile Internet<br>traffic prediction</h2></div>
+        <div class="relative z-10"><p class="text-lg leading-relaxed text-slate-200">A context-aware prediction pipeline for bursty traffic generated by perceptual data reduction. The project connects experimental visuo-haptic data, traffic modeling, and resource reservation.</p><div class="mt-6 flex flex-wrap gap-5"><a href="https://github.com/evanyeh5118/Traffic_model_prediction" target="_blank" rel="noopener" class="text-sky-300 font-medium">View code →</a><a href="/projects/projects.html" class="font-medium">Project details →</a></div></div>
+      </div>
+    </section>
+
+    <section id="recent" aria-labelledby="recent-heading" class="py-12 border-t border-slate-200 dark:border-slate-800">
+      <div class="flex items-end justify-between gap-4"><div><p class="section-kicker mb-3">Updates</p><h2 id="recent-heading" class="text-3xl font-bold tracking-tight">Recent news</h2></div><a href="/timeline_full/timeline.html" class="text-blue-600 dark:text-blue-400 font-medium">Full timeline →</a></div>
+      <div id="recentContainer" class="mt-7"><p class="text-slate-500">Loading recent events…</p></div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading" class="my-12 p-7 md:p-10 rounded-2xl bg-slate-900 text-white dark:bg-slate-900 border border-slate-800">
+      <p class="text-xs uppercase tracking-widest font-bold text-blue-300 mb-3">Contact</p><h2 id="contact-heading" class="text-3xl font-bold">Interested in collaborating?</h2>
+      <p class="mt-3 max-w-2xl text-slate-300">I welcome conversations about networked control, Tactile Internet, wireless systems, and research collaboration.</p>
+      <div class="mt-6 flex flex-wrap gap-4"><a href="mailto:yu.yeh@centralesupelec.fr" class="px-5 py-3 bg-white text-slate-900 rounded-lg font-medium">Email me</a><a href="https://www.linkedin.com/in/yu-yeh-163543198/" target="_blank" rel="noopener" class="px-5 py-3 border border-slate-600 rounded-lg font-medium">LinkedIn</a><a href="https://github.com/evanyeh5118" target="_blank" rel="noopener" class="px-5 py-3 border border-slate-600 rounded-lg font-medium">GitHub</a></div>
+    </section>
+  </main>
+  <footer class="border-t border-slate-200 dark:border-slate-800"><div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500">© <span id="year"></span> Yu Yeh · Built on GitHub Pages</div></footer>
+  <script type="module" src="js/main.js"></script>
+</body>
 </html>
-

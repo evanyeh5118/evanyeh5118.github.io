@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Timeline — Yu Yeh</title>
     <meta name="description" content="Categorized timeline of Yu Yeh's education and work experience." />
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="../assets/images/profile_photo.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
 
     <!-- Prevent flash of unstyled content -->
     <script>
@@ -90,6 +91,7 @@
             setTimeout(() => {
               module.initThemeToggle();
             }, 5);
+            import('../js/header.js').then(({ initHeader }) => initHeader());
           });
         });
     </script>

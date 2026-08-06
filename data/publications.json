@@ -10,7 +10,7 @@
       "Link": "https://hal.science/hal-05268651v1/file/2025292806_03.pdf", 
       "code": "#" 
     },
-    "tags": ["Tactile Internet","Optomistic Constrained Online Convex Optimization"]
+    "tags": ["Tactile Internet","Optimistic Constrained Online Convex Optimization"]
   }, 
   {
     "year": 2025,
@@ -37,16 +37,16 @@
         "DOI: 10.1109/CDC56724.2024.10885873": "https://ieeexplore.ieee.org/abstract/document/10885873/", 
         "code": "#" 
       },
-      "tags": ["Haptics Interface","Markov Jump Lienar System", "Safety control"]
+      "tags": ["Haptic Interface","Markov Jump Linear System", "Safety Control"]
     },
     {
       "year": 2022,
-      "title": "Modeling and position control of the HASEL actuator via port-Hamiltonian approacht",
+      "title": "Modeling and position control of the HASEL actuator via port-Hamiltonian approach",
       "authors": "Yu Yeh, Nelson Eduardo Cisneros Pinto, Yongxin Wu, Kanty Rabenorosoa, Yann Le Gorreci",
       "venue": "IEEE Robotics and Automation Letters",
       "abstract": "This paper deals with the modeling and control problem of a Hydraulically Amplified Self-healing Electrostatic (HASEL) actuator based on the port-Hamiltonian framework. A nonlinear spring-damper system is used to approximate the mechanical deformation of the actuator due to the motion of the fluid while a nonlinear capacitance is used to approximate the electric behavior of the system. The actuator position control strategy is investigated based on the Interconnection Damping Assignment-Passivity Based Control (IDA-PBC) method, with further Integral Actions (IA) added to cope with load uncertainties. The proposed model and control laws are validated on an experimental benchmark. The experimental tests demonstrate that the proposed model is accurate up to 94% of fitness. The controllers allow assigning the actuator position with ramp and sinusoidal references with the relative error less than 5%. At last, the robustness of the proposed IDA-PBC controller with IA has been shown with the experimental result for the unknown load disturbance rejection.",
       "links": { 
-        "pdf": "https://evanyeh5118.github.io/files/yu2022Modeling.pdf", 
+        "Paper": "https://evanyeh5118.github.io/assets/files/yu2022Modeling.pdf",
         "DOI: 10.1109/LRA.2022.3181365": "https://ieeexplore.ieee.org/document/9793678/", 
         "code": "#" 
       },

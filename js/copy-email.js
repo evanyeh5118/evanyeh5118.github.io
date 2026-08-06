@@ -1,4 +1,4 @@
-export function initCopyEmail(email = "you@example.com") {
+export function initCopyEmail(email = "yu.yeh@centralesupelec.fr") {
   const btn = document.getElementById("copyEmail");
   const note = document.getElementById("copied");
   if (!btn || !note) return;

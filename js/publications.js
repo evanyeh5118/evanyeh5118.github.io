@@ -1,142 +1,45 @@
-import { el } from "./utils/dom.js";
+import { el } from './utils/dom.js';
 
-export function initPublications() {
-  const track = document.getElementById("pubTrack");
-  const scroller = document.getElementById("pubScroller");
-  const status = document.getElementById("pubStatus");
-  if (!track || !scroller) return;
+export function initPublications({ limit } = {}) {
+  const container = document.getElementById('pubTrack');
+  const status = document.getElementById('pubStatus');
+  if (!container) return;
 
-  fetch("data/publications.json", { cache: "no-store" })
-    .then((r) => r.json())
-    .then((items) => {
-      track.innerHTML = "";
-
-      if (!Array.isArray(items) || items.length === 0) {
-        if (status) status.textContent = "No publications found.";
-        return;
-      }
-
-      items.sort((a, b) => (b.year || 0) - (a.year || 0));
-
-      items.forEach((p) => {
-        const links = [];
-        Object.entries(p.links || {}).forEach(([k, v]) => {
-          if (v && v !== "#")
-            links.push(
-              el(
-                "a",
-                {
-                  href: v,
-                  target: "_blank",
-                  rel: "noreferrer",
-                  class:
-                    "text-xs px-2 py-1 rounded-md border border-slate-200 dark:border-slate-700 underline",
-                },
-                k
-              )
-            );
-        });
-
-        const tags = (p.tags || []).map((t) =>
-          el(
-            "span",
-            {
-              class:
-                "text-xs px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700 text-slate-500",
-            },
-            t
-          )
-        );
-
-        const card = el(
-          "div",
-          {
-            class:
-              "publication-block snap-start shrink-0 w-[28rem] sm:w-[34rem] rounded-2xl p-4 shadow-soft " +
-              "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] overflow-hidden",
-          },
-          el("div", { class: "text-sm text-slate-500" }, String(p.year ?? "")),
-          el("div", { class: "font-semibold mt-1" }, p.title ?? ""),
-          el(
-            "div",
-            { class: "text-sm text-slate-600 dark:text-slate-300 mt-1" },
-            p.authors ?? ""
-          ),
-          el("div", { class: "text-sm mt-1" }, p.venue ?? ""),
-          // Expandable content (hidden by default, shown on hover)
-          el("div", { 
-            class: "publication-expandable max-h-0 opacity-0 transition-all duration-300 ease-in-out overflow-hidden"
-          },
-            links.length ? el("div", { class: "mt-3 flex gap-2 flex-wrap" }, links) : null,
-            tags.length ? el("div", { class: "mt-2 flex gap-2 flex-wrap" }, tags) : null
-          )
-        );
-        
-        // Add hover event listeners for expansion effect
-        card.addEventListener('mouseenter', () => {
-          const expandable = card.querySelector('.publication-expandable');
-          if (expandable) {
-            expandable.style.maxHeight = '200px';
-            expandable.style.opacity = '1';
-            card.style.padding = '20px';
-          }
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          const expandable = card.querySelector('.publication-expandable');
-          if (expandable) {
-            expandable.style.maxHeight = '0px';
-            expandable.style.opacity = '0';
-            card.style.padding = '16px';
-          }
-        });
-        
-        track.appendChild(card);
-      });
-
-      const prevBtns = [
-        document.getElementById("pubPrev"),
-        document.getElementById("pubPrevM"),
-      ].filter(Boolean);
-      const nextBtns = [
-        document.getElementById("pubNext"),
-        document.getElementById("pubNextM"),
-      ].filter(Boolean);
-
-      function scrollByPage(dir = 1) {
-        scroller.scrollBy({
-          left: Math.max(360, Math.floor(scroller.clientWidth * 0.9)) * dir,
-          behavior: "smooth",
-        });
-      }
-      prevBtns.forEach((b) => b.addEventListener("click", () => scrollByPage(-1)));
-      nextBtns.forEach((b) => b.addEventListener("click", () => scrollByPage(+1)));
-
-      scroller.addEventListener(
-        "wheel",
-        (e) => {
-          if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-            e.preventDefault();
-            scroller.scrollBy({ left: e.deltaY });
-          }
-        },
-        { passive: false }
-      );
-
-      if (status) {
-        status.textContent = `Loaded ${items.length} publication${items.length > 1 ? "s" : ""}.`;
-        setTimeout(() => (status.textContent = ""), 1500);
-      }
+  fetch('/data/publications.json', { cache: 'no-store' })
+    .then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
     })
-    .catch((err) => {
-      console.error("Error loading publications:", err);
-      if (status) {
-        status.className = "text-sm text-red-600 dark:text-red-400 mb-2";
-        status.textContent = "Couldn't load publications.";
-      }
-      if (track) {
-        track.innerHTML =
-          "<div class='text-sm text-red-600 dark:text-red-400'>Couldn't load publications.json.</div>";
-      }
+    .then((items) => {
+      const publications = items.sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, limit || items.length);
+      container.innerHTML = '';
+      publications.forEach((publication) => {
+        const links = Object.entries(publication.links || {})
+          .filter(([, url]) => url && url !== '#')
+          .map(([label, url]) => el('a', {
+            href: url, target: '_blank', rel: 'noopener',
+            class: 'text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline'
+          }, label));
+        const authors = el('p', { class: 'mt-2 text-sm text-slate-600 dark:text-slate-400' });
+        const parts = (publication.authors || '').split('Yu Yeh');
+        parts.forEach((part, index) => {
+          authors.append(document.createTextNode(part));
+          if (index < parts.length - 1) authors.append(el('strong', { class: 'text-slate-900 dark:text-slate-100' }, 'Yu Yeh'));
+        });
+        container.append(el('article', {
+          class: 'card-lift p-5 md:p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800'
+        },
+        el('div', { class: 'flex flex-col sm:flex-row sm:items-start justify-between gap-2' },
+          el('h3', { class: 'font-semibold text-lg leading-snug' }, publication.title || ''),
+          el('span', { class: 'text-sm font-mono text-slate-500 shrink-0' }, String(publication.year || ''))),
+        authors,
+        el('p', { class: 'mt-2 text-sm font-medium' }, publication.venue || ''),
+        links.length ? el('div', { class: 'mt-4 flex flex-wrap gap-x-5 gap-y-2' }, links) : null));
+      });
+      if (status) status.textContent = `${publications.length} selected publications loaded`;
+    })
+    .catch(() => {
+      container.innerHTML = '<p class="text-red-600 dark:text-red-400">Publications could not be loaded.</p>';
+      if (status) status.textContent = 'Publications could not be loaded';
     });
 }

@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Publications & Projects — Yu Yeh</title>
+    <title>Publications — Yu Yeh</title>
     <meta name="description" content="Research publications and academic projects of Yu Yeh. Explore publications in control systems, optimization, and information processing." />
     <meta name="keywords" content="Yu Yeh, publications, research papers, academic papers, control systems, optimization, PhD research" />
     <meta name="author" content="Yu Yeh" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://evanyeh5118.github.io/publications/publications.html" />
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="../assets/images/profile_photo.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
 
     <!-- Prevent flash of unstyled content -->
     <script>
@@ -138,9 +139,10 @@
             // Initialize theme toggle for the dynamically loaded banner
             import('../js/theme-toggle.js').then(module => {
               // Small delay to ensure DOM is fully ready
-              setTimeout(() => {
-                module.initThemeToggle();
-              }, 5);
+            setTimeout(() => {
+              module.initThemeToggle();
+            }, 5);
+            import('../js/header.js').then(({ initHeader }) => initHeader());
             });
           });
       }

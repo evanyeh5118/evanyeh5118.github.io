@@ -9,7 +9,8 @@
     <meta name="author" content="Yu Yeh" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://evanyeh5118.github.io/projects/projects.html" />
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="../assets/images/profile_photo.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
 
     <!-- Prevent flash of unstyled content -->
     <script>
@@ -138,9 +139,10 @@
             // Initialize theme toggle for the dynamically loaded banner
             import('../js/theme-toggle.js').then(module => {
               // Small delay to ensure DOM is fully ready
-              setTimeout(() => {
-                module.initThemeToggle();
-              }, 5);
+            setTimeout(() => {
+              module.initThemeToggle();
+            }, 5);
+            import('../js/header.js').then(({ initHeader }) => initHeader());
             });
           })
           .catch(err => {
@@ -164,7 +166,7 @@
         <div class="text-center">
           <h1 class="text-4xl font-bold mb-4">Projects</h1>
           <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            A comprehensive collection of my development projects.
+            Research systems and tools connecting networked control, wireless communication, and learning.
           </p>
         </div>
       </section>

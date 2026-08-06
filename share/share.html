@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Resources — Yu Yeh</title>
     <meta name="description" content="Curated collection of online resources, tutorials, lectures, and books for learning computer science and machine learning." />
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="../assets/images/profile_photo.jpg" type="image/jpeg" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
 
     <!-- Prevent flash of unstyled content -->
     <script>
@@ -139,9 +140,10 @@
             // Initialize theme toggle for the dynamically loaded banner
             import('../js/theme-toggle.js').then(module => {
               // Small delay to ensure DOM is fully ready
-              setTimeout(() => {
-                module.initThemeToggle();
-              }, 5);
+            setTimeout(() => {
+              module.initThemeToggle();
+            }, 5);
+            import('../js/header.js').then(({ initHeader }) => initHeader());
             });
           });
       }
