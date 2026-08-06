@@ -27,14 +27,19 @@ export function initPublications({ limit } = {}) {
           if (index < parts.length - 1) authors.append(el('strong', { class: 'text-slate-900 dark:text-slate-100' }, 'Yu Yeh'));
         });
         container.append(el('article', {
-          class: 'card-lift p-5 md:p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800'
+          class: 'publication-block card-lift p-5 md:p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800'
         },
         el('div', { class: 'flex flex-col sm:flex-row sm:items-start justify-between gap-2' },
           el('h3', { class: 'font-semibold text-lg leading-snug' }, publication.title || ''),
           el('span', { class: 'text-sm font-mono text-slate-500 shrink-0' }, String(publication.year || ''))),
         authors,
         el('p', { class: 'mt-2 text-sm font-medium' }, publication.venue || ''),
-        links.length ? el('div', { class: 'mt-4 flex flex-wrap gap-x-5 gap-y-2' }, links) : null));
+        links.length ? el('div', { class: 'mt-4 flex flex-wrap gap-x-5 gap-y-2' }, links) : null,
+        publication.abstract ? el('div', { class: 'publication-abstract' },
+          el('div', {},
+            el('p', { class: 'pt-4 border-t border-slate-200 dark:border-slate-700 text-sm leading-relaxed text-slate-600 dark:text-slate-300' }, publication.abstract)
+          )
+        ) : null));
       });
       if (status) status.textContent = `${publications.length} selected publications loaded`;
     })

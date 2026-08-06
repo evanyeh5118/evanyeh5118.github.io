@@ -37,6 +37,18 @@ html.dark .nav-link:hover { color: #e0f2fe; text-shadow: 0 0 16px rgba(255,255,2
 .feature-panel::after { content: ""; position: absolute; width: 22rem; height: 22rem; right: -8rem; top: -10rem; border: 1px solid rgba(125,211,252,.28); border-radius: 50%; box-shadow: 0 0 0 3rem rgba(125,211,252,.04),0 0 0 6rem rgba(125,211,252,.03); }
 .publication-block { position: relative; }
 .publication-block::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; border-radius: 1rem 0 0 1rem; background: linear-gradient(#2563eb,#38bdf8); opacity: .7; }
+.publication-abstract {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height .45s ease, opacity .25s ease, margin-top .3s ease;
+}
+.publication-block:hover .publication-abstract {
+  max-height: 32rem;
+  opacity: 1;
+  margin-top: 1rem;
+}
 .timeline-description { max-height: none !important; opacity: 1 !important; margin-top: 1rem !important; }
 @media (min-width: 1200px) { .hero-shell { margin-left: calc((100vw - 72rem) / -2); margin-right: calc((100vw - 72rem) / -2); padding-left: calc((100vw - 72rem) / 2); padding-right: calc((100vw - 72rem) / 2); } }
 @media (max-width: 767px) {
