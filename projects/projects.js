@@ -1,4 +1,7 @@
 import { el } from "../js/utils/dom.js";
+import { initParallaxBackground } from "../js/parallax-background.js";
+
+initParallaxBackground();
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {

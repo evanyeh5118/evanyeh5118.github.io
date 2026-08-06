@@ -133,7 +133,7 @@ export default function Post({ postData }) {
         </header>
 
         {/* Article Content Container */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 md:p-12 shadow-sm">
+        <div className="article-panel bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 md:p-12 shadow-sm">
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
           </div>

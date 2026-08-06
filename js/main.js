@@ -3,9 +3,11 @@ import { initThemeToggle } from "./theme-toggle.js";
 import { initPublications } from "./publications.js";
 import { initRecent } from "./recent.js";
 import { initHeader } from "./header.js";
+import { initParallaxBackground } from "./parallax-background.js";
 
 // Run after DOM is ready
 window.addEventListener("DOMContentLoaded", () => {
+  initParallaxBackground();
   initYear();
   fetch('/partials/banner.html')
     .then((response) => response.text())

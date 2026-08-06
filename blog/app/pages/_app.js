@@ -10,6 +10,23 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains('dark'))
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    let ticking = false
+    const updateBackground = () => {
+      const offset = Math.min(window.scrollY * 0.075, 140)
+      document.documentElement.style.setProperty('--background-shift', `-${offset}px`)
+      ticking = false
+    }
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateBackground)
+        ticking = true
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    updateBackground()
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {

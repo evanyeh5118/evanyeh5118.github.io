@@ -1,5 +1,8 @@
 import { el } from "../js/utils/dom.js";
 import { initYear } from "../js/year.js";
+import { initParallaxBackground } from "../js/parallax-background.js";
+
+initParallaxBackground();
 
 export function initFullTimeline() {
   console.log("=== FULL TIMELINE INITIALIZATION START ===");
