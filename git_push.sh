@@ -4,5 +4,5 @@ git remote get-url origin | grep -qE '^https://github\.com/' && \
 gh auth setup-git >/dev/null && \
 git push origin HEAD || {
   echo "PUSH ABORTED: expected '$EXPECTED_USER', active account is '${ACTUAL_USER:-unknown}', or origin is not HTTPS GitHub."
-  exit 1
+ > exit 1
 }
