@@ -45,11 +45,9 @@ function initResources() {
       console.log("Resources data loaded:", resources);
       
       allResources = resources;
-      filteredResources = resources;
-      
-      // Render initial resources
-      renderResources();
-      updateResourceCount();
+      // Apply the current controls instead of resetting the list. A visitor may
+      // already have typed a query while the JSON request was in flight.
+      filterResources();
       
       console.log("Resources initialized successfully");
     })
@@ -214,36 +212,46 @@ function initSearch() {
     return;
   }
   
-  // Add input event listener with debouncing
-  let searchTimeout;
-  searchInput.addEventListener("input", (e) => {
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
-      filterResources();
-    }, 300);
-  });
+  // The resource list is small, so filtering immediately gives predictable
+  // feedback and also supports pasted text and mobile input methods.
+  searchInput.addEventListener("input", filterResources);
   
   console.log("Search initialized successfully");
 }
 
 function filterResources() {
   const searchInput = document.getElementById("searchInput");
-  const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-  
-  // Filter by category and search term
-  filteredResources = allResources.filter(resource => {
-    const matchesCategory = currentCategory === 'all' || resource.category === currentCategory;
-    const matchesSearch = !searchTerm || 
-      resource.title.toLowerCase().includes(searchTerm) ||
-      resource.description.toLowerCase().includes(searchTerm) ||
-      resource.category.toLowerCase().includes(searchTerm);
-    
-    return matchesCategory && matchesSearch;
-  });
+  const searchTerm = searchInput ? searchInput.value : "";
+
+  filteredResources = filterResourceList(allResources, currentCategory, searchTerm);
   
   // Render filtered resources
   renderResources();
   updateResourceCount();
+}
+
+function normalizeSearchText(value) {
+  return String(value ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase()
+    .trim();
+}
+
+export function filterResourceList(resources, category = "all", query = "") {
+  const searchTerm = normalizeSearchText(query);
+
+  return resources.filter((resource) => {
+    const resourceCategory = String(resource.category ?? "");
+    const matchesCategory = category === "all" || resourceCategory === category;
+    const searchableText = normalizeSearchText([
+      resource.title,
+      resource.description,
+      resourceCategory,
+    ].join(" "));
+
+    return matchesCategory && (!searchTerm || searchableText.includes(searchTerm));
+  });
 }
 
 // Initialize when DOM is ready
