@@ -1,4 +1,18 @@
+
 [
+  {
+    "year": 2026,
+    "title": "Predictive Hybrid Resource Scheduling for Haptic Traffic with Diffusion-Based Offline Reinforcement Learning",
+    "authors": "Y Yeh, G Kokkinis, Q Zhang, SE Elayoubi, VS Varma",
+    "venue": "2026 24th International Symposium on Modeling and Optimization in Mobile, Ad Hoc, and Wireless Networks (WiOpt)",
+    "abstract": "Tactile Internet has emerged as a cutting-edge application in 5G, aligning with requirements of Ultra-Reliable Low-Latency Communications (URLLC), and is expected to be an essential service in 6G. TI service traffic is characterized by a high burstiness, and the design of effective resource reservation strategies remains an open research in this context. To address this challenge, we formulate the resource reservation problem in the Tactile Internet as an online decision-making task and address it by applying Optimistic Constrained Online Convex Optimization, profiting from Tactile Internet traffic prediction capabilities. We validate the proposed optimistic algorithm by utilizing a traffic dataset based on a self-developed hapticvisual testbed, demonstrating the optimistic algorithm's superior performance compared to the non-optimistic baseline.",
+    "links": { 
+      "pdf": "#", 
+      "Link": "https://hal.science/hal-05584808/document", 
+      "code": "#" 
+    },
+    "tags": ["Tactile Internet","Offline Reinforcement Learning", "Hybrid Resource Scheduling"]
+  }, 
   {
     "year": 2025,
     "title": "Optimistic Constrained Online Convex Optimization for Resource Reservation in Tactile Internet",
