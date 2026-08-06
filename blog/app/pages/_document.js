@@ -10,9 +10,9 @@ export default function Document() {
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('theme') || 'light';
+                  var theme = localStorage.getItem('theme');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var initialTheme = theme === 'system' ? (prefersDark ? 'dark' : 'light') : theme;
+                  var initialTheme = theme ? theme : (prefersDark ? 'dark' : 'light');
                   
                   // Apply theme immediately
                   if (initialTheme === 'dark') {
@@ -27,15 +27,10 @@ export default function Document() {
                   document.documentElement.style.backgroundColor = initialTheme === 'dark' ? 'rgb(2 6 23)' : 'rgb(248 250 252)';
                   document.documentElement.style.color = initialTheme === 'dark' ? 'rgb(248 250 252)' : 'rgb(15 23 42)';
                   
-                  // Also set body background to prevent any remaining flash
-                  document.body.style.backgroundColor = initialTheme === 'dark' ? 'rgb(2 6 23)' : 'rgb(248 250 252)';
-                  document.body.style.color = initialTheme === 'dark' ? 'rgb(248 250 252)' : 'rgb(15 23 42)';
                 } catch (e) {
                   // Fallback to light theme if localStorage is not available
                   document.documentElement.style.backgroundColor = 'rgb(248 250 252)';
                   document.documentElement.style.color = 'rgb(15 23 42)';
-                  document.body.style.backgroundColor = 'rgb(248 250 252)';
-                  document.body.style.color = 'rgb(15 23 42)';
                 }
               })();
             `,

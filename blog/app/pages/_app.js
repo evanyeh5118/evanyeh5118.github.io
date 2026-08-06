@@ -1,170 +1,79 @@
 import '../styles/globals.css'
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
+import { useRouter } from 'next/router'
 import PageTransition from '../components/PageTransition'
 
 export default function App({ Component, pageProps }) {
-  const [isLoading, setIsLoading] = useState(false)
-  const [theme, setTheme] = useState('light')
+  const router = useRouter()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [dark, setDark] = useState(false)
 
   useEffect(() => {
-    // Initialize theme immediately to prevent flash
-    const savedTheme = localStorage.getItem('theme') || 'light'
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const initialTheme = savedTheme === 'system' ? (prefersDark ? 'dark' : 'light') : savedTheme
-    
-    setTheme(initialTheme)
-    document.documentElement.classList.toggle('dark', initialTheme === 'dark')
-    
-    // Initialize theme toggle functionality after component mounts
-    setTimeout(() => {
-      initFallbackThemeToggle();
-    }, 100);
-  }, []);
+    setDark(document.documentElement.classList.contains('dark'))
+  }, [])
 
-  // Prevent flash by setting initial theme in head
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [theme])
+    setMenuOpen(false)
+  }, [router.asPath])
 
-  // Fallback theme toggle implementation
-  const initFallbackThemeToggle = () => {
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.classList.toggle('dark', newTheme === 'dark');
-        setTheme(newTheme);
-      });
-    }
-  };
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white">
-        <Head>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function() {
-                  try {
-                    var theme = localStorage.getItem('theme') || 'light';
-                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    var initialTheme = theme === 'system' ? (prefersDark ? 'dark' : 'light') : theme;
-                    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
-                  } catch (e) {}
-                })();
-              `,
-            }}
-          />
-        </Head>
-        {/* Loading skeleton */}
-        <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-          <div className="animate-pulse">
-            {/* Header skeleton */}
-            <div className="h-[100px] bg-white/80 dark:bg-slate-900/80 border-b border-slate-200/60 dark:border-slate-700/60 fixed top-0 left-0 right-0 z-50">
-              <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between h-full">
-                <div className="flex items-center gap-3 h-full">
-                  <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700"></div>
-                  <div className="w-48 h-8 bg-slate-200 dark:bg-slate-700 rounded"></div>
-                </div>
-                <div className="flex items-center gap-5 h-full">
-                  {[...Array(5)].map((_, i) => (
-                    <div key={i} className="w-20 h-6 bg-slate-200 dark:bg-slate-700 rounded"></div>
-                  ))}
-                  <div className="w-24 h-9 bg-slate-200 dark:bg-slate-700 rounded-lg"></div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Content skeleton */}
-            <div className="pt-[100px]">
-              <div className="mx-auto max-w-4xl px-4 py-8">
-                <div className="space-y-6">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/40 p-6">
-                      <div className="w-3/4 h-8 bg-slate-200 dark:bg-slate-700 rounded mb-3"></div>
-                      <div className="w-1/2 h-4 bg-slate-200 dark:bg-slate-700 rounded mb-3"></div>
-                      <div className="w-full h-4 bg-slate-200 dark:bg-slate-700 rounded"></div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+  const toggleTheme = () => {
+    const nextDark = !document.documentElement.classList.contains('dark')
+    document.documentElement.classList.toggle('dark', nextDark)
+    localStorage.setItem('theme', nextDark ? 'dark' : 'light')
+    setDark(nextDark)
   }
 
+  const navItems = [
+    ['/publications/publications.html', 'Publications'],
+    ['/projects/projects.html', 'Research'],
+    ['/timeline_full/timeline.html', 'Experience'],
+    ['/share/share.html', 'Resources'],
+    ['/blog/posts/', 'Blog'],
+  ]
+
   return (
-    <PageTransition>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white">
-        <Head>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function() {
-                  try {
-                    var theme = localStorage.getItem('theme') || 'light';
-                    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    var initialTheme = theme === 'system' ? (prefersDark ? 'dark' : 'light') : theme;
-                    document.documentElement.classList.toggle('dark', initialTheme === 'dark');
-                  } catch (e) {}
-                })();
-              `,
-            }}
-          />
-        </Head>
-        
-        {/* Banner (matches partials/banner.html) */}
-        <header
-          className="backdrop-blur bg-white/80 dark:bg-slate-900/80 border-b border-slate-200/60 dark:border-slate-700/60 fixed top-0 left-0 right-0 z-50"
-          style={{ height: '100px' }}
-        >
-          <div
-            className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between"
-            style={{ height: '100%' }}
-          >
-            {/* Logo + Name */}
-            <a href="/" className="flex items-center gap-3" style={{ height: '100%' }}>
-              <div
-                className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 grid place-items-center font-bold text-lg"
-                style={{ height: '40px', width: '40px' }}
-              >
-                Y
-              </div>
-              <span className="font-semibold text-2xl" style={{ lineHeight: '40px' }}>
-                葉語 (Yu Yeh) 🧋🇹🇼
+    <div className="site-shell min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <div className="sticky top-0 z-40">
+        <header className="site-header relative backdrop-blur bg-white/90 dark:bg-slate-900/90 border-b border-slate-200/70 dark:border-slate-700/70">
+          <div className="mx-auto max-w-6xl px-4 min-h-[72px] flex items-center justify-between gap-4">
+            <a href="/" className="flex items-center gap-3 shrink-0" aria-label="Yu Yeh homepage">
+              <span className="w-10 h-10 rounded-full bg-blue-600 text-white grid place-items-center font-bold" aria-hidden="true">YY</span>
+              <span>
+                <span className="block font-semibold leading-tight">Yu Yeh</span>
+                <span className="hidden sm:block text-xs text-slate-500 dark:text-slate-400">PhD Researcher · Networked Control</span>
               </span>
             </a>
-
-            {/* Navigation */}
-            <nav className="flex items-center gap-5 text-base" style={{ height: '100%' }}>
-              <a href="/timeline_full/timeline.html" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Timelines</a>
-              <a href="/publications/publications.html" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Publications</a>
-              <a href="/projects/projects.html" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Projects</a>
-              <a href="/share/share.html" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Resources</a>
-              <a href="/blog/posts/" className="hover:underline text-base flex items-center" style={{ height: '40px' }}>Blog</a>
-              <button id="themeToggle" className="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-sm" style={{ height: '36px' }}>
-                Toggle theme
+            <button
+              className="md:hidden p-2 rounded-lg border border-slate-300 dark:border-slate-700"
+              type="button"
+              aria-controls="siteNav"
+              aria-expanded={menuOpen}
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <span className="text-xl" aria-hidden="true">{menuOpen ? '×' : '☰'}</span>
+            </button>
+            <nav id="siteNav" className={`${menuOpen ? 'is-open' : ''} md:flex flex-col md:flex-row items-stretch md:items-center gap-1 md:gap-5 text-sm`} aria-label="Primary navigation">
+              {navItems.map(([href, label]) => (
+                <a key={href} href={href} className="nav-link py-2" aria-current={label === 'Blog' ? 'page' : undefined}>{label}</a>
+              ))}
+              <a href="/assets/files/cv.pdf" className="nav-link py-2" target="_blank" rel="noopener">CV</a>
+              <button className="px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-sm" type="button" aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'} onClick={toggleTheme}>
+                {dark ? '☀ Light' : '☾ Dark'}
               </button>
             </nav>
           </div>
         </header>
-
-        {/* Main content with top margin for fixed header */}
-        <main className="pt-[100px]">
-          <Component {...pageProps} />
-        </main>
       </div>
-    </PageTransition>
+
+      <main id="main-content" className="flex-1">
+        <PageTransition><Component {...pageProps} /></PageTransition>
+      </main>
+
+      <footer className="border-t border-slate-200 dark:border-slate-800">
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500">© {new Date().getFullYear()} Yu Yeh · Built on GitHub Pages</div>
+      </footer>
+    </div>
   )
 }

@@ -5,18 +5,20 @@ import { getSortedPostsData } from '../lib/posts'
 export default function Home({ allPostsData }) {
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8">
+    <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
       <Head>
         <title>Blog - Yu Yeh</title>
-        <meta name="description" content="Personal blog with thoughts and insights" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Notes from Yu Yeh on research, engineering, and life as a PhD researcher." />
+        <link rel="canonical" href="https://evanyeh5118.github.io/blog/posts/" />
+        <link rel="icon" href="/assets/images/profile_photo.jpg" type="image/jpeg" />
       </Head>
 
       {/* Page Header */}
-      <section className="mt-10 mb-8">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Blog</h1>
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+      <section className="mb-12 border-b border-slate-200 dark:border-slate-800 pb-10">
+        <div className="max-w-3xl">
+          <p className="section-kicker mb-3">Writing</p>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Blog</h1>
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl">
             Thoughts, insights, and updates from my journey.
           </p>
         </div>
@@ -26,22 +28,22 @@ export default function Home({ allPostsData }) {
       <section className="mb-16">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-semibold">Posts</h2>
-          <div className="text-sm text-slate-500">{allPostsData.length} posts</div>
+          <div className="text-sm text-slate-500">{allPostsData.length} {allPostsData.length === 1 ? 'post' : 'posts'}</div>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid gap-5 md:grid-cols-2">
           {allPostsData.map(({ id, title, date, description, tags }) => (
           <article
             key={id}
-            className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/40 backdrop-blur-sm p-6 transition-shadow duration-200 hover:shadow"
+            className="blog-card card-lift rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-7"
           >
-            <Link href={`/blog/posts/${id}/`}>
-              <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2 hover:underline cursor-pointer">
+            <Link href={`/blog/posts/${id}/`} className="block rounded-sm">
+              <h2 className="text-2xl font-bold tracking-tight mb-3 hover:text-blue-600 dark:hover:text-blue-400">
                 {title}
               </h2>
             </Link>
-            <div className="flex items-center gap-4 mb-3 text-sm text-slate-600 dark:text-slate-400">
-              <time className="italic">
+            <div className="flex items-center gap-4 mb-4 text-sm text-slate-500 dark:text-slate-400">
+              <time dateTime={date}>
                 {new Date(date).toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',
@@ -66,15 +68,6 @@ export default function Home({ allPostsData }) {
         </div>
       </section>
 
-      {/* Back to Home */}
-      <section className="mb-16 text-center">
-        <a
-          href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm shadow-soft hover:opacity-90 transition-opacity"
-        >
-          ← Back to Home
-        </a>
-      </section>
     </div>
   )
 }

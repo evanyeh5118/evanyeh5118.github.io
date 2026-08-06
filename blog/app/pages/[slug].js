@@ -11,20 +11,21 @@ export default function Post({ postData }) {
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8">
+    <div className="mx-auto max-w-4xl px-4 py-10 md:py-14">
       <Head>
         <title>{postData.title} - Yu Yeh's Blog</title>
         <meta name="description" content={postData.description} />
         <meta name="keywords" content={postData.tags.join(', ')} />
         <meta name="author" content="Yu Yeh" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`https://evanyeh5118.github.io/blog/posts/${postData.id}/`} />
+        <link rel="canonical" href={`https://evanyeh5118.github.io/blog/posts/${postData.slug}/`} />
+        <link rel="icon" href="/assets/images/profile_photo.jpg" type="image/jpeg" />
         
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={postData.title} />
         <meta property="og:description" content={postData.description} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://evanyeh5118.github.io/blog/posts/${postData.id}/`} />
+        <meta property="og:url" content={`https://evanyeh5118.github.io/blog/posts/${postData.slug}/`} />
         <meta property="og:image" content="https://evanyeh5118.github.io/assets/images/og.png" />
         <meta property="og:site_name" content="Yu Yeh - Personal Blog" />
         <meta property="og:locale" content="en_US" />
@@ -86,7 +87,7 @@ export default function Post({ postData }) {
               "@type": "ListItem",
               "position": 2,
               "name": "Blog",
-              "item": "https://evanyeh5118.github.io/blog/"
+              "item": "https://evanyeh5118.github.io/blog/posts/"
             },
                          {
                "@type": "ListItem",
@@ -101,8 +102,9 @@ export default function Post({ postData }) {
 
       {/* Article Header */}
       <article className="mb-16">
-        <header className="mb-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">{postData.title}</h1>
+        <header className="mb-10 text-center max-w-3xl mx-auto">
+          <p className="section-kicker mb-3">Blog post</p>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-5">{postData.title}</h1>
           <div className="flex items-center justify-center gap-4 mb-4 text-sm text-slate-600 dark:text-slate-400">
             <time dateTime={postData.date} className="italic">
               {new Date(postData.date).toLocaleDateString('en-US', {
@@ -131,7 +133,7 @@ export default function Post({ postData }) {
         </header>
 
         {/* Article Content Container */}
-        <div className="bg-white dark:bg-slate-900 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-8">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 md:p-12 shadow-sm">
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
           </div>
@@ -141,7 +143,7 @@ export default function Post({ postData }) {
       {/* Navigation */}
       <nav className="flex justify-center items-center pt-8 border-t border-slate-200 dark:border-slate-700">
         <a
-          href="/blog/"
+          href="/blog/posts/"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-sm shadow-soft hover:opacity-90 transition-opacity"
         >
           ← Back to Blog
