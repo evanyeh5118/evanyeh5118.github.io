@@ -10,7 +10,9 @@ export const urls = {
   // Add more URLs here easily
   github: 'https://github.com/evanyeh5118',
   linkedin: 'https://www.linkedin.com/in/yu-yeh-163543198/',
-  scholar: 'https://scholar.google.com/citations?user=AgPmc-cAAAAJ&hl=en'
+  scholar: 'https://scholar.google.com/citations?user=AgPmc-cAAAAJ&hl=en',
+  publications: '/publications/publications.html',
+  cv: '/assets/files/cv.pdf'
 };
 
 // Helper function to get display names for links
@@ -42,6 +44,25 @@ My research emphasizes the integration of control and communication systems to a
 challenges in latency, reliability, and efficiency, enabling advanced applications \
 in next-generation networks. I'm also interested in the application of Deep learning and Reinforcement Learning in these fields.";
 
+// Homepage profile card content. Keep visible profile details here so they can
+// be updated without editing the page markup.
+export const heroProfile = {
+  eyebrow: 'Networked control · Tactile Internet · 5G/6G',
+  name: 'Yu Yeh',
+  title: 'PhD Student at L2S, CentraleSupélec',
+  institution: 'Université Paris-Saclay',
+  description: heroDescription,
+  photo: {
+    src: '/assets/images/profile_photo.jpg',
+    alt: 'Portrait of Yu Yeh'
+  },
+  actions: [
+    { id: 'heroPublications', label: 'View publications', href: urls.publications },
+    { id: 'heroCv', label: 'View CV', href: urls.cv },
+    { id: 'heroScholar', label: 'Google Scholar', href: urls.scholar }
+  ]
+};
+
 // Function to render description with URLs
 export function renderDescriptionWithUrls(elementId, description, urlMap) {
   const element = document.getElementById(elementId);
@@ -59,3 +80,31 @@ export function renderDescriptionWithUrls(elementId, description, urlMap) {
   }
 }
 
+export function renderHeroProfile(profile = heroProfile) {
+  const textFields = {
+    heroEyebrow: profile.eyebrow,
+    heroName: profile.name,
+    heroTitle: profile.title,
+    heroInstitution: profile.institution
+  };
+
+  Object.entries(textFields).forEach(([id, value]) => {
+    const element = document.getElementById(id);
+    if (element) element.textContent = value;
+  });
+
+  const photo = document.getElementById('heroPhoto');
+  if (photo) {
+    photo.src = profile.photo.src;
+    photo.alt = profile.photo.alt;
+  }
+
+  profile.actions.forEach((action) => {
+    const link = document.getElementById(action.id);
+    if (!link) return;
+    link.textContent = action.label;
+    link.href = action.href;
+  });
+
+  renderDescriptionWithUrls('heroDescription', profile.description, urls);
+}

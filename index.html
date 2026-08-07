@@ -31,19 +31,21 @@
   <main id="main-content" class="mx-auto max-w-6xl px-4">
     <section class="hero-shell py-12 md:py-20 text-white">
       <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-panel rounded-2xl p-7 sm:p-10 md:p-12 grid md:grid-cols-[1fr_230px] gap-10 items-center max-w-5xl">
-      <div>
-        <p class="text-xs uppercase tracking-[.18em] font-bold text-sky-300 mb-5">Networked control · Tactile Internet · 5G/6G</p>
-        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-.045em] leading-[.96]">Yu Yeh<span class="text-sky-400">.</span></h1>
-        <p class="mt-5 text-xl md:text-2xl text-slate-100">PhD Researcher at CentraleSupélec<br><span class="text-base text-slate-300">Université Paris-Saclay</span></p>
-        <p class="prose-copy mt-6 text-lg leading-relaxed text-slate-200">I study the joint design of communication and control for reliable, low-latency Tactile Internet systems. My work combines online optimization, traffic prediction, and safety-oriented control for emerging 5G/6G applications.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/publications/publications.html" class="px-5 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700">View publications</a>
-          <a href="assets/files/cv.pdf" target="_blank" rel="noopener" class="px-5 py-3 rounded-lg border border-white/40 bg-white/10 font-medium hover:bg-white/20">View CV</a>
-          <a href="https://scholar.google.com/citations?user=AgPmc-cAAAAJ&hl=en" target="_blank" rel="noopener" class="px-5 py-3 rounded-lg border border-white/40 bg-white/10 font-medium hover:bg-white/20">Google Scholar</a>
+      <div class="hero-panel rounded-2xl p-7 sm:p-10 md:p-12 max-w-5xl">
+        <div class="grid md:grid-cols-[1fr_230px] gap-8 md:gap-10 items-center">
+          <div>
+            <p id="heroEyebrow" class="text-xs uppercase tracking-[.18em] font-bold text-sky-300 mb-5"></p>
+            <h1 id="heroName" class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-.045em] leading-[.96]"></h1>
+            <p class="mt-5 text-xl md:text-2xl text-slate-100"><span id="heroTitle"></span><br><span id="heroInstitution" class="text-base text-slate-300"></span></p>
+          </div>
+          <div class="relative w-fit mx-auto md:mr-0"><div class="absolute -inset-5 border border-sky-300/30 rounded-full" aria-hidden="true"></div><img id="heroPhoto" src="" alt="" width="280" height="280" class="hero-portrait relative w-44 h-44 md:w-56 md:h-56 rounded-full object-cover" /></div>
         </div>
-      </div>
-      <div class="relative"><div class="absolute -inset-5 border border-sky-300/30 rounded-full" aria-hidden="true"></div><img src="assets/images/profile_photo.jpg" alt="Portrait of Yu Yeh" width="280" height="280" class="hero-portrait relative w-44 h-44 md:w-56 md:h-56 mx-auto rounded-full object-cover" /></div>
+        <p id="heroDescription" class="w-full max-w-none mt-10 text-lg leading-relaxed text-slate-200 whitespace-pre-line"></p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a id="heroPublications" href="#" class="px-5 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700"></a>
+          <a id="heroCv" href="#" target="_blank" rel="noopener" class="px-5 py-3 rounded-lg border border-white/40 bg-white/10 font-medium hover:bg-white/20"></a>
+          <a id="heroScholar" href="#" target="_blank" rel="noopener" class="px-5 py-3 rounded-lg border border-white/40 bg-white/10 font-medium hover:bg-white/20"></a>
+        </div>
       </div>
     </section>
 
