@@ -47,7 +47,7 @@ in next-generation networks. I'm also interested in the application of Deep lear
 // Homepage profile card content. Keep visible profile details here so they can
 // be updated without editing the page markup.
 export const heroProfile = {
-  eyebrow: 'Networked control · Tactile Internet · 5G/6G',
+  eyebrow: 'Goal-Oriented Communication - Optimized Control - Learning',
   name: 'Yu Yeh',
   title: 'PhD Student at L2S, CentraleSupélec',
   institution: 'Université Paris-Saclay',
